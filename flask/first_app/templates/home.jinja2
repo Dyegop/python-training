@@ -1,0 +1,25 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+<h1>Welcome to your blog</h1>
+<h2>Posts</h2>
+
+<!-- This is a bullet point list will show a link for each post. -->
+<ul>
+	<!-- Jinja2 for loop -->
+	{% for post_id, post in posts.items() %}
+		<!-- Here we use url_for to take us to the appropriate route. -->
+		<li><a href="{{ url_for('post', post_id=post_id) }}">{{ post['title'] }}</a></li>
+	{% endfor %}
+</ul>
+
+<a href="{{ url_for('create') }}">Create new post</a>
+{% endblock %}
+
+<!-- We could do the following instead. Make sure to have double curly braces ommitted here just so it doesn't break the file.
+<ul>
+	<li><a href="/post/0">{ posts[0]['title'] }</a></li>
+    <li><a href="/post/1">{ posts[1]['title'] }</a></li>
+</ul>
+But of course, that would give an error if we don't have sufficient posts—andas we add
+new posts they wouldn't appear in the list. -->

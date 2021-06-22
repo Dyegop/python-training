@@ -1,0 +1,8 @@
+<!-- Inherit from base template in jinja: 'extends base_template' -->
+{% extends 'base.jinja2' %}
+
+<!-- Replace the 'content' block with whatever we put inside it -->
+{% block content %}
+<h1>{{ post['title'] }}</h1>
+<p>{{ post['content'] }}</p>
+{% endblock %}

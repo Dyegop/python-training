@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>First Flask App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+</head>
+<body>
+    <a href="{{ url_for('home') }}">Home</a>
+    <div class="container">
+        <!-- Jinja2 is a template engine that is required by flask
+             Usually, we create a base “skeleton” template that contains all the common elements of your site and
+             defines "blocks" that child templates can override -->
+
+        <!-- Create a block in jinja
+                {% block block_name %}
+                ...
+                {% endblock %} -->
+        {% block content %}
+	    {% endblock %}
+    </div>
+
+</body>
+</html>
