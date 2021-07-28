@@ -3,8 +3,6 @@ FLASK NOTES:
 -The first step to create a flask app is create a flask object.
 -The second step is to create different functions to perform actions over the app
     -Every function will be decorated to add the route that will call that function
-
-
 """
 
 # Imports
@@ -115,4 +113,3 @@ if __name__ == '__main__':
 
     # Set debug=True for development purposes only
     app.run(debug=True)
-

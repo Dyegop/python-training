@@ -1,6 +1,5 @@
 import os
 import shutil
-import send2trash as s2t
 import zipfile as zf
 from PIL import Image
 from pathlib import Path
@@ -44,7 +43,7 @@ f.close()
 # os.rmdir(path)         -> delete an empty directory at the path your provide. It can't be reversed
 # shutil.rmtree(path)    -> delete all files and folders contained in the path. It can't be reversed
 # send2trash(path)       -> send files to trash can instead of remove them
-s2t.send2trash(filename)
+os.remove(filename)
 
 # Grant permissions
 # os.chmod(path, mode) -> change permissions of path using mode

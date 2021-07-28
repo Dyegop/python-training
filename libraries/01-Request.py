@@ -2,6 +2,13 @@
 REQUEST:
 -Standard library to make HTTP request
 -Response content will be a serialized JSON content
+-Exceptions:
+    -In the event of a network problem (e.g. DNS failure, refused connection, etc), Requests will raise a
+    ConnectionError exception.
+    -In the event of the rare invalid HTTP response, Requests will raise an HTTPError exception.
+    -If a request times out, a Timeout exception is raised.
+    -If a request exceeds the configured number of maximum redirections, a TooManyRedirects exception is raised.
+    -All exceptions that Requests explicitly raises inherit from requests.exceptions.RequestException.
 
 HTTP NOTES:
 -Methods:
