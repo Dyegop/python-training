@@ -97,7 +97,6 @@ def create():
         return redirect(url_for('post', post_id=post_id))
     # If the method is 'GET', we have just loaded the '/post/create' url so we can render the form.
     return render_template('create.jinja2')
-    pass
 
 
 
