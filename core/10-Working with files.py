@@ -19,8 +19,6 @@ interface (API).
 
 import openpyxl
 import csv
-import PyPDF2
-import docx
 import json
 from openpyxl.utils import get_column_letter, column_index_from_string
 
@@ -157,71 +155,3 @@ JsonData_python = json.loads(JsonData_string)
 # dump() -> write data to json file
 pythonValue = {'isCat': True, 'miceCaught': 0, 'name': 'Zophie', 'felineIQ': None}
 stringJsonData = json.dumps(pythonValue)
-
-
-
-
-
-
-# -----------------PDF FILES-----------------
-
-# Open pdf file and create pdf object
-pdf_file = open('.\\Files\\meetingminutes.pdf', 'rb')
-pdf_reader = PyPDF2.PdfFileReader(pdf_file)
-
-# Pdf object attributes
-# numPages     -> get the number of pages
-# documentInfo -> get document information
-print(pdf_reader.numPages)
-print(pdf_reader.documentInfo)
-
-# getPage(n)    -> get the content of page number n
-# extractText() -> return a string of the page's text
-page_obj = pdf_reader.getPage(0)
-print(page_obj.extractText())
-
-# Decrypting pdf files
-# decrypt() ->
-pdf_reader_encr = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
-pdf_reader_encr.decrypt('rosebud')
-
-
-
-
-
-
-# -----------------WORD FILES-----------------
-
-# Open word files
-doc = docx.Document()
-
-# Word object attributes
-# paragrahps -> return a list of the paragrahps objects in a docx object
-# runs       -> return a list of run objects in a paragrahp object
-print(doc.paragraphs)
-print(doc.paragraphs[1].runs)
-print(doc.paragraphs[1].runs[0])
-
-# Paragraphs and runs attributes
-# text   -> return a string of the text in paragrahps or runs
-# style  -> return style id of the text in paragrahps or runs
-print(doc.paragraphs[3].text)
-print(doc.paragraphs[1].runs[2].text)
-print(doc.paragraphs[2].style)
-
-# Get the full text of a docx object
-fullText = []
-for para in doc.paragraphs:
-    fullText.append(para.text)
-print('\n'.join(fullText))
-
-# Write Word documents
-# add_paragraph(str, str_style) -> add paragrahp to a Word object
-# add_run(str, str_style)       -> add runs to a paragraph object
-doc2 = docx.Document()
-doc2.add_paragraph('Hello, world!', 'Title')
-new_paragrahp = doc2.add_paragraph('Example!')
-new_paragrahp.add_run(' This text is being added to the second paragraph.')
-
-# Save Word documents
-doc2.save('helloworld.docx')
