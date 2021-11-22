@@ -1,10 +1,10 @@
 """
 ERROR HANDLING:
 -Errors can be handled with try and except statements.
-  -Try: the code that could potentially have an error is put in a try clause.
-  -Except: the program execution executes the code inside except clause if an error happens.
-  -Finally: the code that runs whether an exception happens or not
-  -Else: the code that runs if an exception is not raise
+    -Try: the code that could potentially have an error is put in a try clause.
+    -Except: the program execution executes the code inside except clause if an error happens.
+    -Finally: the code that runs whether an exception happens or not
+    -Else: the code that runs if an exception is not raise
 -There are a lot of different exceptions.
 
 RAISING EXCEPTIONS:
@@ -12,9 +12,9 @@ RAISING EXCEPTIONS:
 -If no expressions are present, raise re-raises the last exception that was active in the current scope.
 further up the call stack.
 -A raise statement must include the following elements:
-  -The raise keyword
-  -A call to the Exception() function
-  -A string with a helpful error message passed to the Exception() function
+    -The raise keyword
+    -A call to the Exception() function
+    -A string with a helpful error message passed to the Exception() function
 
 ASSERTIONS:
 -Assertions helps to detect problems early in your program, where the cause is clear.

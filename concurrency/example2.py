@@ -15,7 +15,6 @@ import concurrent.futures
 
 # EXAMPLE OF CONCURRENT FUTURES
 
-
 start = time.perf_counter()
 
 

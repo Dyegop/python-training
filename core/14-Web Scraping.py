@@ -3,31 +3,31 @@ BASIC CONCEPTS:
 -Get premission to scrape, otherwise your IP address may be blocked.
 -Be aware that websites change often, meaning your code could be broken.
 -Steps to web scraping:
-  -Step 1: Send a request to the targeted website to collect the required data.
-  -Step 2: Retrieve information from the targeted website in HTML or XML format.
-  -Step 3: Parse information to the several parsers based on the data format.
-  -Step 4: Store the parsed data in the desired format.
+    -Step 1: Send a request to the targeted website to collect the required data.
+    -Step 2: Retrieve information from the targeted website in HTML or XML format.
+    -Step 3: Parse information to the several parsers based on the data format.
+    -Step 4: Store the parsed data in the desired format.
 
 REQUEST:
 -Use request to grab a page. This may fail if you have a firewall blocking your app.
 -Object type will be an HTTP response
 -Request object contains website information and the following attributes:
-  -text: a string of text inside an html tag.
-  -content: raw content of a website.
+    -text: a string of text inside an html tag.
+    -content: raw content of a website.
 
 BEAUTIFULSOUP:
 -Use beautiful soup to analyze a page and get elements from the website.
 -We need to add a parser to interpret or render the information from the website.
 -There are different parsers we can use:
-  -html.parser -> Python-based, fast, and lenient.
-  -lxml html -> it depends on C, fast and lenient.
-  -lxml xml -> the only xml parser available and it also depends on C.
-  -html5lib -> Python-based, it is slow and can create valid HTML5.
+    -html.parser -> Python-based, fast, and lenient.
+    -lxml html -> it depends on C, fast and lenient.
+    -lxml xml -> the only xml parser available and it also depends on C.
+    -html5lib -> Python-based, it is slow and can create valid HTML5.
 -Types of Objects in Beautiful Soup:
-  -Tag: an XML or HTML tag in the web document. Tags have a lot of attributes and methods.
-  -NavigableString: a string or set of characters that correspond to the text present within a tag.
-  -BeautifulSoup: it represents the entire web document and supports navigating and searching the document tree.
-  -Comment: the comment or information section of the document. It is a special type of string.
+    -Tag: an XML or HTML tag in the web document. Tags have a lot of attributes and methods.
+    -NavigableString: a string or set of characters that correspond to the text present within a tag.
+    -BeautifulSoup: it represents the entire web document and supports navigating and searching the document tree.
+    -Comment: the comment or information section of the document. It is a special type of string.
 """
 
 import requests

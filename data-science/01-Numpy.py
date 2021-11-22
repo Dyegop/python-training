@@ -7,10 +7,10 @@ NDARRAY CLASS:
 -Numpy’s array class is called ndarray.
 -A numpy ndarray can hold only a single datatype.
 -It has the following attributes:
-  -ndim: the number of axes (dimensions) of the array. It is also called the rank of the array.
-  -shape: the size of the array in each dimension. The length of the shape tuple is the rank or ndim.
-  -size: the total number of elements in the array. It is equal to the product of the elements of the shape tuple.
-  -type: the type of the elements in the array. It can be created or specified using Python.
+    -ndim: the number of axes (dimensions) of the array. It is also called the rank of the array.
+    -shape: the size of the array in each dimension. The length of the shape tuple is the rank or ndim.
+    -size: the total number of elements in the array. It is equal to the product of the elements of the shape tuple.
+    -type: the type of the elements in the array. It can be created or specified using Python.
 """
 
 import numpy as np

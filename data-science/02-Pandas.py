@@ -18,17 +18,17 @@ SERIES:
 -Series are similar to a NumPy array (it is built on top of the NumPy array object).
 -Series admits accessing data (ser[0]), slicing (ser1[1:3]) and sum (ser1 + ser2)
 -Properties:
-  -Series can hold any arbitrary Python Object, even functions.
-  -List, arrays, or dictionary can be converted to Series.
-  -Series will use numbers as indexes by default for list or arrays if no label is set.
-  -Series will use keys as indexes for dictionaries.
+    -Series can hold any arbitrary Python Object, even functions.
+    -List, arrays, or dictionary can be converted to Series.
+    -Series will use numbers as indexes by default for list or arrays if no label is set.
+    -Series will use keys as indexes for dictionaries.
 
 DATAFRAMES:
 -Dataframes are a bunch of series that shares the same indexes.
 -Properties:
-  -To apply changes permanently, we must set Inplace=True.
-  -Conditional selection = dataframe[conditions][['columns']]
-  -All the operations available in numpy are also available in Pandas(mean, max, min, etc)
+    -To apply changes permanently, we must set Inplace=True.
+    -Conditional selection = dataframe[conditions][['columns']]
+    -All the operations available in numpy are also available in Pandas(mean, max, min, etc)
 """
 
 import numpy as np

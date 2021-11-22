@@ -5,43 +5,43 @@ PYTHON DATATYPES:
 
 STRINGS:
 -Properties:
-  -Immutable: elements cannot be changed or replaced.
-  -Concatenation: strings can be concatenated using "+".
-  -Indexing: access individual values.
-  -Slicing: access a range of values
-  -Strings can be iterated over, but are not iterable objects.
+    -Immutable: elements cannot be changed or replaced.
+    -Concatenation: strings can be concatenated using "+".
+    -Indexing: access individual values.
+    -Slicing: access a range of values
+    -Strings can be iterated over, but are not iterable objects.
 
 LISTS:
 -Properties:
-  -Mutable: their elements can be changed.
-  -Concatenation: lists can be concatenated using "+".
-  -Indexing: access individual values.
-  -Slicing: access a range of values
-  -Items are ordered and not unique.
-  -Items can be of any kind, even lists, tuples, etc.
+    -Mutable: their elements can be changed.
+    -Concatenation: lists can be concatenated using "+".
+    -Indexing: access individual values.
+    -Slicing: access a range of values
+    -Items are ordered and not unique.
+    -Items can be of any kind, even lists, tuples, etc.
 
 TUPLES:
 -Properties:
-  -Immutable: elements cannot be changed or replaced.
-  -Concatenation: tuples can be concatenated using "+".
-  -Indexing: access individual values.
-  -Slicing: access a range of values
-  -Items are ordered and not unique.
-  -Items can be of any kind, even lists, tuples, etc.
+    -Immutable: elements cannot be changed or replaced.
+    -Concatenation: tuples can be concatenated using "+".
+    -Indexing: access individual values.
+    -Slicing: access a range of values
+    -Items are ordered and not unique.
+    -Items can be of any kind, even lists, tuples, etc.
 
 SETS:
 -Properties:
-  -Mutable: their elements can be changed.
-  -Items are unordered and unique.
-  -Items in a set must be immutable, so we can't use lists, sets, dictionaries.
-  -Duplicated items will not be presented.
-  -Items can be of any kind, even lists, tuples, etc.
+    -Mutable: their elements can be changed.
+    -Items are unordered and unique.
+    -Items in a set must be immutable, so we can't use lists, sets, dictionaries.
+    -Duplicated items will not be presented.
+    -Items can be of any kind, even lists, tuples, etc.
 
 DICTIONARIES:
 -Properties:
-  -Mutable: their elements can be changed.
-  -Items are unordered and not unique.
-  -Values can be retrieved using keys that must be immutable (string, number, tuple with immutable elements) and unique.
+    -Mutable: their elements can be changed.
+    -Items are unordered and not unique.
+    -Values can be retrieved using keys that must be immutable (string, number, tuple with immutable elements) and unique.
 """
 
 

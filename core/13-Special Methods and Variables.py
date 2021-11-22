@@ -41,10 +41,10 @@ its name to the __name__ variable.
 -After the special variables are set up, the interpreter executes all the code in the module, one statement at a time.
 -__Name__ is useful if you want to write a .py file that can be both used by other programs and/or libraries as a
 module, and can also be run as the main program itself. For example:
-  -Your module is a library, but you want to have a script mode where it runs some unit tests or a demo.
-  -Your module is only used as a main program, but it has some unit tests, and the testing framework works by
-   importing .py files like your script and running special test functions.
-  -Your module is mostly used as a main program, but it also provides a programmer-friendly API for advanced users.
+    -Your module is a library, but you want to have a script mode where it runs some unit tests or a demo.
+    -Your module is only used as a main program, but it has some unit tests, and the testing framework works by
+    importing .py files like your script and running special test functions.
+    -Your module is mostly used as a main program, but it also provides a programmer-friendly API for advanced users.
 
 __DIR__:
 -It tries to return a list of valid attributes of the object

@@ -7,9 +7,9 @@ from that object.
 MATPLOTLIB FIGURE
 -Figure keeps track of all the child Axes, a smattering of 'special' artists (title, legends, etc) and the canvas.
 -We can create figure in different ways:
-  -fig = plt.figure()            - an empty figure with no Axes
-  -fig, ax = plt.subplots()      - a figure with a single Axes
-  -fig, axs = plt.subplots(n, m) - a figure with a nxm grid of Axes
+    -fig = plt.figure()            - an empty figure with no Axes
+    -fig, ax = plt.subplots()      - a figure with a single Axes
+    -fig, axs = plt.subplots(n, m) - a figure with a nxm grid of Axes
 """
 
 import matplotlib.pylab as plt
