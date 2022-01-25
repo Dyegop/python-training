@@ -29,6 +29,13 @@ __STR__:
 __ADD__, __SUB__
 -Magic methods for the "+" and "-" operators.
 
+__GETITEM, __SETITEM__, __DELITEM__
+-__getitem__ is called to implement evaluation of self[key], i.e var = data_obj[2]
+-__setitem__ is called to implement assignment to self[key], i.e data_obj[2] = 4
+-__delitem__ is called to implement deletion of self[key]
+-This methods should only be implemented for mappings if the objects support changes to the values for keys, or if new
+keys can be added, or for sequences if elements can be replaced
+
 __NAME__:
 -Whenever the Python interpreter reads a source file, it does two things:
   -it sets a few special variables like __name__.
@@ -154,6 +161,30 @@ p1 = Point(1, 2)
 p2 = Point(2, 3)
 print(p1+p2)
 print(p2-p1)
+
+
+
+# __getitem__, __setitem__, __delitem__ example:
+class Counter(object):
+    def __init__(self, floors):
+        self._floors = [None] * floors
+
+    def __setitem__(self, floor_number, data):
+        self._floors[floor_number] = data
+
+    def __getitem__(self, floor_number):
+        return self._floors[floor_number]
+
+    def __delitem__(self, floor_number):
+        del self._floors[floor_number]
+
+index = Counter(4)
+index[0] = 'ABCD'
+index[1] = 'EFGH'
+index[2] = 'IJKL'
+index[3] = 'MNOP'
+print(index[2])
+del index[2]
 
 
 

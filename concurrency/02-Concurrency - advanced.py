@@ -20,14 +20,10 @@ processes, so they can not be interrupted during the operation.
 -The queue module implements multi-producer, multi-consumer queues:
     -A queue is a linear data structure that stores items in First In First Out (FIFO) manner.
     -To create a queue object, we can use the queue.Queue construct.
-
-
 """
 
 import time
-import queue
-import random
-from threading import Lock, Thread
+from threading import Lock
 from concurrent.futures import ThreadPoolExecutor
 
 
