@@ -29,7 +29,7 @@ def menu_selector():
     print("************MAIN MENU**************")
     # input -> method that presents a prompt to the user (the optional arg of raw_input([arg])),
     # gets input from the user and returns the data input by the user on a string
-    choice = input("0: Abandon the casino\n1: Drink some whisky\n2: Play Blackjack\n")
+    choice = input("0: Abandon the casino\n1: Drink some whisky\n2: Play blackjack\n")
     if choice == "0":
         raise SystemExit
     elif choice == "1":

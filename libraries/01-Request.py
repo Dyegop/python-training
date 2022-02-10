@@ -9,33 +9,6 @@ REQUEST:
     -If a request times out, a Timeout exception is raised.
     -If a request exceeds the configured number of maximum redirections, a TooManyRedirects exception is raised.
     -All exceptions that Requests explicitly raises inherit from requests.exceptions.RequestException.
-
-HTTP NOTES:
--Methods:
-    -GET     -> request data from a specified resource
-    -POST    -> send data to a server to modify and update a resource
-    -PUT     -> send data to a server to create a resource or overwrite it
-    -HEAD    -> request data from a specified resource without the response body
-    -DELETE  -> delete the specified resource
-    -OPTIONS -> describe the communication options for the target resource
--Status codes:
-    -200 -> status OK
-    -404 -> not found
--Query string:
-    -+ -> represent a space in query string
-    -& -> separate the various var=value pairs in the query string
--Sessions
-    -Because HTTP is stateless, in order to associate a request to any other request, you need a way to store user data
-    between HTTP requests.
-    -Cookies or URL parameters (for ex. like http://example.com/myPage?asd=lol&boo=no) are both suitable ways to
-    transport data between 2 or more request. However they are not good in case you don't want that data to be
-    readable/editable on client side.
-    -The solution is to store that data server side, give it an "id", and let the client only know (and pass back at
-    every http request) that id. There you go, sessions implemented. Or you can use the client as a convenient remote
-    storage, but you would encrypt the data and keep the secret server-side.
-    -Of course there are other aspects to consider:
-        *you don't want people to hijack other's sessions.
-        *you want sessions to not last forever but to expire.
 """
 
 import requests

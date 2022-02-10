@@ -1,0 +1,53 @@
+HTTP NOTES:
+    -Methods:
+        -GET     -> Request data from a specified resource
+                 -> Requests using GET should only be used to request data (they shouldn't include data)
+                 -> Sending body/payload in a GET request is allowed, but it may cause the request to be rejected
+
+        -POST    -> Send data to a server to modify and update a resource
+                 -> The difference between PUT and POST is that PUT is idempotent - calling it once or several times
+                 successively has the same effect (no side effect), where successive identical POST may have additional
+                 effects
+
+        -PUT     -> Send data to a server to create a resource or overwrite it
+
+        -HEAD    -> Request data from a specified resource without the response body
+                 -> A response to a HEAD method should not have a body. If it has one anyway, that body must be ignored
+
+        -DELETE  -> Delete the specified resource
+
+        -OPTIONS -> Describe the communication options for the target resource
+
+        -CONNECT -> Start two-way communications with the requested resource
+                 -> It can be used to open a tunnel
+
+        -TRACE   -> Perform a message loop-back test along the path to the target resource, providing a useful debugging
+                 mechanism
+
+        -PATCH   -> Apply partial modifications to a resource
+                 -> PATCH is somewhat analogous to the "update" concept found in CRUD
+                 -> A PATCH request is considered a set of instructions on how to modify a resource
+
+
+    -Status codes:
+        -200 -> status OK
+        -404 -> not found
+
+
+    -Query string:
+        -+ -> represent a space in query string
+        -& -> separate the various var=value pairs in the query string
+
+
+    -Sessions
+        -Because HTTP is stateless, in order to associate a request to any other request, you need a way to store user
+        data between HTTP requests.
+        -Cookies or URL parameters (for ex. like http://example.com/myPage?asd=lol&boo=no) are both suitable ways to
+        transport data between 2 or more request. However they are not good in case you don't want that data to be
+        readable/editable on client side.
+        -The solution is to store that data server side, give it an "id", and let the client only know (and pass back
+        at every http request) that id. There you go, sessions implemented. Or you can use the client as a convenient
+        remote storage, but you would encrypt the data and keep the secret server-side.
+        -Of course there are other aspects to consider:
+            *you don't want people to hijack other's sessions.
+            *you want sessions to not last forever but to expire.

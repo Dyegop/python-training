@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 
 # --------- Database ---------
-# We use a dictionary to store data to simplify things so our will not be persistance
+# We use a dictionary to store data to simplify things so our app will not have persistance
 POSTS = {
     0: {
         'post_id': 0,

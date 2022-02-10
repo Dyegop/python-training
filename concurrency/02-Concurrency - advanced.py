@@ -20,11 +20,20 @@ processes, so they can not be interrupted during the operation.
 -The queue module implements multi-producer, multi-consumer queues:
     -A queue is a linear data structure that stores items in First In First Out (FIFO) manner.
     -To create a queue object, we can use the queue.Queue construct.
+
+
+COROUTINES
+-Coroutines are a more generalized form of subroutines.
+-While subroutines are entered at one point and exited at another point, coroutines can be entered, exited, and resumed
+at many different points.
+-They can be implemented with the async def statement.
 """
 
 import time
 from threading import Lock
 from concurrent.futures import ThreadPoolExecutor
+from collections import deque
+from types import coroutine
 
 
 
@@ -46,7 +55,6 @@ class FakeDatabase:
             print(f"Thread {name} has modified the DB value")
             print(f"Thread {name} is releasing the lock")
 
-
 database = FakeDatabase()
 
 with ThreadPoolExecutor(max_workers=3) as executor:
@@ -63,3 +71,28 @@ print(f"DB Value is {database.value}")
 # ----------------- QUEUE THREADS EXAMPLE -----------------
 
 # See example3.py
+
+
+
+
+
+
+# ----------------- COROUTINES -----------------
+
+
+friends = deque(('Rolf', 'Jose', 'Charlie', 'Jen', 'Anna'))
+
+
+@coroutine
+def friend_upper():
+    while friends:
+        friend = friends.popleft().upper()
+        greeting = yield
+        print(f'{greeting} {friend}')
+
+
+"""
+
+"""
+
+friend_upper().send("hello")

@@ -1,0 +1,23 @@
+REST NOTES:
+    -REST is a protocol-agnostic architecture proposed by Roy Fielding in his dissertation (chapter 5 being the
+    presentation of REST), that generalises the proven concept of web browsers as clients in order to decouple clients
+    in a distributed system from servers.
+    -Invoking a service via HTTP does not make it RESTful.
+    -An API in REST is not restricted to HTTP protocol.
+
+
+FUNDAMENTAL REST PRINCIPLES
+    -Client-Server Communication
+        -All applications built in the RESTful style must also be client-server.
+    -Stateless
+        -Each client request to the server requires that its state be fully represented.
+        -The server must be able to completely understand the client request without using any server context or server
+        session state.
+    -Cacheable
+        -Cache constraints may be used, thus enabling response data to to be marked as cacheable or not-cachable.
+        -Any data marked as cacheable may be reused as the response to the same subsequent request.
+    -Uniform Interface
+        -All components must interact through a single uniform interface.
+        -Because all component interaction occurs via this interface, interaction with different services is very
+        simple.
+        -This also means that implementation changes can be made in isolation.
