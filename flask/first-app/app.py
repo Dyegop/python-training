@@ -10,7 +10,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 
 
-# Create flask first_app (an instance of flask)
+# Create flask first-app (an instance of flask)
 app = Flask(__name__)
 
 
