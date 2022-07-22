@@ -1,5 +1,5 @@
 HTTP NOTES:
-    -Methods:
+    -METHODS:
         -GET     -> Request data from a specified resource
                  -> Requests using GET should only be used to request data (they shouldn't include data)
                  -> Sending body/payload in a GET request is allowed, but it may cause the request to be rejected
@@ -29,17 +29,38 @@ HTTP NOTES:
                  -> A PATCH request is considered a set of instructions on how to modify a resource
 
 
-    -Status codes:
-        -200 -> status OK
-        -404 -> not found
+    -IMPORTANT NOTES:
+        -Regarding the difference between PUT, POST or PATCH , who is deciding whether it is going to be a new resource
+        creation or updating/modifying an existing one, it's the database operation or something equivalent to that
+        which takes care of persistence.
+        -So, you could use PUT, PATCH or POST indistinctly.
 
 
-    -Query string:
+    -STATUS CODES:
+        1xx - Informational response
+            -100 -> Continue - the server has received the headers and the client should proceed to send body
+        2xx - Success
+            -200 -> OK
+            -201 -> Created - the request has been fulfilled
+            -202 -> Accepted - the request has been accepted for processing, but the processing has not been completed
+        4xx - Client errors
+            -400 -> Bad Request
+            -401 -> Unauthorized
+            -403 -> Forbidden - Not having the necessary permissions or attempting a prohibited action
+            -404 -> Not found - Requested resource could not be found
+        5xx - Server errors
+            -500 -> Internal Server Error
+            -501 -> Not Implemented - The server either does not recognize the request method, or it can't to fulfil the request
+            -502 -> Bad Gateway - The server was acting as a gateway or proxy and received an invalid response from the upstream server
+            -503 -> Service Unavailable - The server cannot handle the request (because it is overloaded or down for maintenance)
+
+
+    -QUERY STRINGS:
         -+ -> represent a space in query string
         -& -> separate the various var=value pairs in the query string
 
 
-    -Sessions
+    -SESSIONES
         -Because HTTP is stateless, in order to associate a request to any other request, you need a way to store user
         data between HTTP requests.
         -Cookies or URL parameters (for ex. like http://example.com/myPage?asd=lol&boo=no) are both suitable ways to

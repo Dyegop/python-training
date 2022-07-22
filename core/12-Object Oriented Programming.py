@@ -74,9 +74,14 @@ POLYMORPHISM:
 -You can re-implement method in the child class. This process is known as Method Overriding.
 -You can access overridden method of the parent class in the child class, by using the super() function.
 
-ABSTRACT BASE CLASS
+ABSTRACT CLASS AND INTERFACES
 -An abstract class can be considered as a blueprint for other classes.
--It allows you to create a set of methods that must be created within any child classes built from the abstract class.
+-Abstract classes allows you to create a set of methods and attributes that must be implemented or override within any
+child classes built from it.
+-Abstract classes can't be instantiated, they must be inhereted by another class.
+-Abstract classes do not need to implement all their functionalities. You can leave some of them as abstract so that
+your subclasses must implement them.
+-The difference with interfaces is that they only allows you to define a functionality, not implement it.
 -Python comes with a module that provides the base for defining Abstract Base classes(ABC) called ABC
 -ABC works by decorating methods of the base class as abstract and then registering concrete classes
 as implementations of the abstract base.

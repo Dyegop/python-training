@@ -1,4 +1,20 @@
 """
+BASIC CONCEPTS:
+-Time-complexity: aka "Big O" or "Big Oh", it is the computational complexity that describes the amount of computer
+time it takes to run an algorithm.
+    -See https://wiki.python.org/moin/TimeComplexity for information about time-complexity in every Python operation
+    -See https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities for general information
+
+-Hash table: a hash table is a structure that is designed to store a list of key-value pairs, without compromising on
+speed and efficiency of manipulating and searching the structure.
+    -The effectiveness of the hash table is derived from the hash function, a function that computes the index of the
+    key-value pair.
+    -In python, dictionaries and sets are implemented using a hash table.
+    -Hash collisions are when two pieces of data in a hash table share the same hash value.
+    -Hash collisions are practically unavoidable when hashing a random subset of a large set of possible keys.
+    -Python uses open addressing to resolve hash coliisions.
+
+
 PYTHON DATATYPES:
 -Basic datatypes: int, float, string
 -Basic containers: list, tuple, set, dictionary

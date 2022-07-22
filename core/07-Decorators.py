@@ -9,8 +9,9 @@ DECORATORS:
 -A decorator takes in a function as parameter, adds some functionality and returns that function.
 -This is also called metaprogramming (a part of the program tries to modify another part at compile time).
 -A decorated function will take then name of the decorator function
+-Decorators with arguments require parentheses, even if you pass empty arguments.
 -Built-in decorators:
-    -@property       -> transform function into a property attribute. Only for methods that does not required parameteres.
+    -@property       -> transform function into a property attribute. Decorated function must not required parameteres.
     -@staticmethod   -> transform a method into a static method so it does not receive an implicit first argument
     -@final          -> restrict the use of inheritance and overriding
     -@classmethod    -> make function behave like a class method
