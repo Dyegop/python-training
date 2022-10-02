@@ -2,7 +2,7 @@
 BASIC CONCEPTS:
 -Concurrency is when two or more tasks can start, run, and complete in overlapping time periods. It doesn't necessarily
 mean they'll ever both be running at the same instant, so no parallelism is implied.
--Parallelism consists of performing multiple operations at the same time, for example multiprocessing.
+-Parallelism consists of performing multiple operations at the same time.
 -Multiprocessing entails spreading tasks over a computer’s central processing units (CPUs, or cores).
 -Multithreading is a concurrent execution model whereby multiple threads take turns executing tasks.
 
@@ -16,12 +16,12 @@ PROCESSES AND THREADS
     -A Thread is an execution unit that is part of a process.
     -Do not kill threads, it can end in a deadlock (see 02-Concurrency - advanced.py for more information)
 -Some key differences between Processes and Threads:
-	-Process means a program is in execution - Thread means a segment of a process.
-	-Processes are not lightweight - Threads are Lightweight
-	-Processes take more time to terminate and for creation - Threads take less time for both.
-	-Processes likely take more time for context switching - Threads take less time.
-	-Processes are mostly isolated - Threads share memory.
-	-Processes do not share data - Threads share data with each other.
+    -Process means a program is in execution - Thread means a segment of a process.
+    -Processes are not lightweight - Threads are Lightweight
+    -Processes take more time to terminate and for creation - Threads take less time for both.
+    -Processes likely take more time for context switching - Threads take less time.
+    -Processes are mostly isolated - Threads share memory.
+    -Processes do not share data - Threads share data with each other.
 
 
 PYTHON GIL:
