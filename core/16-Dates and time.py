@@ -84,4 +84,4 @@ print("Local time: ", local_time)
 # %Y - year with century as a decimal number
 # %% - a literal % character
 print(time.strftime("%b %d %Y %H:%M:%S"))
-print(time.strftime('%Y-%m-%dT:%H:%M:%S'))
+print(time.strftime('%Y-%m-%d:%H:%M:%S'))
