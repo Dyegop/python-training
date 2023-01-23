@@ -1,7 +1,7 @@
 """
 OBJECTS:
 -Everything in Python is an object, even functions and classes.
--Object: instance of a class. Objects has two characteristics:
+-Object: instance of a class. Objects have two characteristics:
     -Attributes -> characteristics of the object. They have the following properties:
         *They can be accessed/modified without using get/set methods.
         *There are not private attributes.
@@ -94,6 +94,7 @@ with the corresponding accessor function set to the decorated function
 
 from abc import ABCMeta, abstractmethod
 from typing import final
+from inspect import Signature, Parameter
 
 
 
@@ -120,7 +121,7 @@ class Person:
         return "This can't be overriding"
 
     # This initializes the object’s class
-    # Attributes can be have a constant value or getting it as a parameter
+    # Attributes can have a constant value or getting it as a parameter
     def __init__(self, name, country):
         self.name = name
         self.country = country
@@ -183,7 +184,7 @@ class Square(Rectangle):
         # After the base class's __init__ ran, the derived object attributes are set as part of its own __init__
         # So, we should just use self.some_var everywhere
         # Super is for accessing stuff from base classes
-        # For example, here we should use self.area() to get the are of an Square object
+        # For example, here we should use self.area() to get the area of a Square object
         self.area = self.area()
 
 # Cube class inherits from Square, which inherits from Rectangle
@@ -228,6 +229,27 @@ pyramid = RightPyramid(2, 4)
 print(RightPyramid.__mro__)
 print(pyramid.area())
 print(pyramid.area_2())
+
+
+# Another inheritance example using **kwargs
+class Shape:
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+
+class Circle(Shape):
+    def __init__(self, radius: float, **kwargs):
+        super().__init__(**kwargs)
+        self.radius = radius
+
+    # __signature__ attribute is a typing.Signature object that describes the arguments that the class expects.
+    __signature__ = Signature(
+        parameters=[
+            Parameter('radius', Parameter.POSITIONAL_OR_KEYWORD, annotation=float),
+            Parameter('x', Parameter.POSITIONAL_OR_KEYWORD, annotation=float),
+            Parameter('y', Parameter.POSITIONAL_OR_KEYWORD, annotation=float),
+        ]
+    )
 
 
 

@@ -125,7 +125,7 @@ async def get_chat_id(name):
     return f"chat-{name}"
 
 async def main():
-    result = await get_chat_id("django")
+    result = await get_chat_id("django-framework")
     print(result)
 
 
