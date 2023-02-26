@@ -1,6 +1,3 @@
-
-
-
 class Settings:
     def __init__(self):
         """ A class to save all game settings """
@@ -17,10 +14,3 @@ class Settings:
 
 
         # Alien settings
-
-
-
-
-
-
-

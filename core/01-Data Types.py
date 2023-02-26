@@ -57,7 +57,8 @@ DICTIONARIES:
 -Properties:
     -Mutable: their elements can be changed.
     -Items are unordered and not unique.
-    -Values can be retrieved using keys that must be immutable (string, number, tuple with immutable elements) and unique.
+    -Values can be retrieved using keys that must be immutable (string, number, tuple with immutable elements) and
+    unique.
 """
 
 

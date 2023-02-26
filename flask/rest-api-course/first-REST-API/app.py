@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request, render_template
 
 
-
 app = Flask(__name__)
 
 
@@ -41,7 +40,6 @@ stores = [
         ]
     },
 ]
-
 
 
 
@@ -96,7 +94,7 @@ def get_item_in_store(name, item_name):
 @app.route('/store', methods=['POST'])
 def create_store():
     # Get data coming back from our request
-    # Browser will send data (the name of the store in this case) and we will have to access that data
+    # Browser will send data (the name of the store in this case) and we will be able to access it
     # Data is sent in the body of the request
     request_data = request.get_json()
     new_store = {

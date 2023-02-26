@@ -1,6 +1,6 @@
 """
 FLASK NOTES:
--The first step to create a flask app is create a flask object.
+-The first step to create a flask app is to create a flask object.
 -The second step is to create different functions to perform actions over the app
     -Every function will be decorated to add the route that will call that function
 """
