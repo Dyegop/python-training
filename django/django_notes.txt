@@ -1,0 +1,31 @@
+DJANGO NOTES:
+
+
+Basic:
+    -When you install Django, it actually also installed a command line tool called django-admin.
+    -Every django command follows this syntax: django-admin command
+
+
+Project Structure:
+    -urls.py     -> the URL patterns for your project
+    -asgi.py     -> an entry-point for ASGI-compatible web servers to serve your project
+    -wsgi.py     -> the Web Server Gateway Interface to help us deploy our web app to production
+    -settings.py -> settings/configuration for a Django project
+    -manage.py   -> command-line utility that lets you interact with a Django project in various ways
+
+
+Django Apps and Projects:
+    -The term project describes a Django web application.
+    -The project Python package is defined primarily by a settings module, but it usually contains other things.
+    -The term application describes a Python package that provides some set of features. Applications may be reused in
+    various projects.
+    -A Django application is a set of code that interacts with various parts of the framework.
+
+    For more information: https://docs.djangoproject.com/en/4.1/ref/applications/
+
+
+List of commands:
+    -django-admin startproject project_name -> start a new project
+    -python manage.py runserver             -> run web application server
+    -python manage.py startapp app_name     -> create a web application
+
