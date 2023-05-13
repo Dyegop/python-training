@@ -18,7 +18,7 @@ class AlienInvasion:
             Functions:
                 -run_game: execute main game functions
                 -_check_events: check input pygame events (from keyboard/mouse)
-                -_update_screen: update element position, color, etc displayed on screen
+                -_update_screen: update element position, color, etc. displayed on screen
 
         """
         self.settings = Settings()

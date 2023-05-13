@@ -11,8 +11,10 @@ from pathlib import Path
 # Create files using open function
 # open(filename, 'file_mode') -> open a file in a given file mode
 # add r before file path avoids special characters (like \n). Alternatively, we can use \\
-filename = r'C:\Users\ponce\Documents\Education\Degree - Software Engineering\Python\Course - Python 3\12-Advanced ' \
-           r'Python Modules\practice.txt '
+filename = (
+    r'C:\Users\ponce\Documents\Education\Degree - Software Engineering\Python\Course - Python '
+    r'3\12-Advanced Python Modules\practice.txt '
+)
 f = open(filename, 'w+')
 
 # Create files using with statement
@@ -30,7 +32,7 @@ with open(filename, 'w+') as my_file:
 
 # File operations
 # read()          -> return the content of a file
-# readlines()     -> return a list of string values from the file, one string for each line of text
+# readlines()     -> return a list of strvalues from the file, one string for each line of text
 # write('string') -> write some string on a file
 # close()         -> close a file
 print(f.read())
@@ -40,14 +42,14 @@ f.close()
 
 # Remove files and directories
 # os.unlink/remove(path) -> delete a file at the path your provide. It can't be reversed
-# os.rmdir(path)         -> delete an empty directory at the path your provide. It can't be reversed
-# shutil.rmtree(path)    -> delete all files and folders contained in the path. It can't be reversed
+# os.rmdir(path)         -> delete an empty dir at the path your provide. It can't be reversed
+# shutil.rmtree(path)    -> delete all files and folders in the path. It can't be reversed
 # send2trash(path)       -> send files to trash can instead of remove them
 os.remove(filename)
 
 # Grant permissions
-# os.chmod(path, mode) -> change permissions of path using mode
-# mode can be an octal (for example, Oo644) or a stat variable from stat module
+# os.chmod(path, mode) -> change permissions of path using given mode that can be an octal
+# (for example, Oo644) or a stat variable from stat module
 os.chmod(filename, 0o644)
 
 
@@ -78,26 +80,27 @@ print(os.path.isfile(filename))
 print(os.path.isdir(filename))
 
 # Get paths as strings
-# os.path.abspath(path)        -> return a string of the absolute path of the argument
-# os.path.relpath(path, start) -> return a string of a relative path from the start
-# os.path.basename(path)       -> return a string of everything that comes after the last slash in a path
-# os.path.dirname(path)        -> return a string of everything that comes before the last slash in a path
-# os.path.split()              -> return a tuple that contains path’s dir name and base name as strings
+# os.path.abspath(path)        -> return a str of the absolute path of the argument
+# os.path.relpath(path, start) -> return a str of a relative path from the start
+# os.path.basename(path)       -> return a str of everything that comes after last \ in a path
+# os.path.dirname(path)        -> return a str of everything that comes before last \ in a path
+# os.path.split()              -> return a tuple with path’s dir name and base name as str
 os.path.abspath('.\\Games')  # .  -> shorthand for the current directory
 os.path.isabs('..\\Games')   # .. -> shorthand for the parent folder
 os.path.relpath('C:\\Windows', 'C:\\')
 
 # Get status of a file or directory
-# os.stat(path) -> performs stat() system call on the specified path, so we get status of the specified path
-# The returned ‘stat-result’ object has following attributes:
-# st_mode  -> It represents file type and file mode bits (permissions)
-# st_dev   -> It represents the identifier of the device on which this file resides
-# st_uid   -> It represents the user identifier of the file owner
-# st_gid   -> It represents the group identifier of the file owner
-# st_size  -> It represents the size of the file in bytes
-# st_atime -> It represents the time of most recent access in seconds
-# st_mtime -> It represents the time of most recent content modification in seconds
-# st_ctime -> It represents the time of most recent metadata change on Unix and creation time on Windows in seconds
+# os.stat(path) -> performs stat() system call on the specified path, so we get its status
+# The returned ‘stat-result’ object has the following attributes:
+# st_mode  -> represents file type and file mode bits (permissions)
+# st_dev   -> represents the identifier of the device on which this file resides
+# st_uid   -> represents the user identifier of the file owner
+# st_gid   -> represents the group identifier of the file owner
+# st_size  -> represents the size of the file in bytes
+# st_atime -> represents the time of most recent access in seconds
+# st_mtime -> represents the time of most recent content modification in seconds
+# st_ctime -> represents the time of most recent metadata change on Unix and creation time on
+# Windows in seconds
 status = os.stat(os.getcwd())
 
 # Move and copy directories with shutil library
@@ -106,11 +109,12 @@ status = os.stat(os.getcwd())
 # shutil.copytree(folder, path) -> copy an entire folder (including files and subfolders)
 shutil.move(filename, r'C:\Users\ponce')
 shutil.copy(filename, r'C:\Users\ponce')
-shutil.copy(filename, r'C:\Users\ponce\new_name.txt')  # copy file and gives the copy a different name
+shutil.copy(filename, r'C:\Users\ponce\new_name.txt')  # copy file and gives the copy another name
 shutil.copytree(r'C:\Users\ponce\Documents\Personal', r'C:\Users\ponce')
 
 # Walk through a directory
-# os.walk(path) -> generate the file names in a directory tree by walking the tree either top-down or bottom-up
+# os.walk(path) -> generate the file names in a directory tree by walking the tree either
+# top-down or bottom-up
 for root, sub_folders, files in os.walk(r'C:\Users\ponce\Downloads'):
     print("Currently looking at folder: " + root)
     print('Subfolders: ')
@@ -172,7 +176,8 @@ calcFile.is_dir()
 # ------------------ZIPPING FILES-----------------
 
 # zipfile() -> zip files to compress them
-# To compress a file, create a zip file object, then write to it (the write step compresses the files)
+# To compress a file, create a zip file object, then write to it (the write step compresses
+# the files)
 # To compress all files in a folder, just use the os.walk() method to iterate this process
 compressed_file = zf.ZipFile('comp_file.zip', 'w')
 compressed_file.write("new_file.txt", compress_type=zf.ZIP_DEFLATED)
@@ -203,7 +208,7 @@ mac.save("laptop.png")
 # Image information
 print(type(mac))
 print(mac.size)
-print(mac.filename)
+print(mac.info)
 print(mac.format_description)
 
 # copy() -> copy the image to another image object
@@ -222,13 +227,14 @@ mac.paste(im=computer, box=(796, 0))
 # Start at top corner (0,0)
 x = 0
 y = 0
-w = 1950/3
-h = 1300/10
+w = int(1950/3)
+h = int(1300/10)
 print(mac.crop((x, y, w, h)))
 
 # resize((new_h,new_w)) -> method to resize an image
 mac.resize((1000, 500))
 
-# rotate() -> rotate a given image to the given number of degrees counter clockwise around its centre
-# expand is optional and expands the output image to make it large enough to hold the entire rotated image
-mac.rotate(90, expand=1)
+# rotate() -> rotate a given image to the given number of degrees counterclockwise
+# expand is optional and expands the output image to make it large enough to hold the entire
+# rotated image
+mac.rotate(90, expand=True)

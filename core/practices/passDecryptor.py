@@ -3,9 +3,7 @@ import sys
 
 
 # Figure out a password that will authenticate the program
-#
-#
-#
+
 def main():
     if len(sys.argv) != 2:
         print("Invalid args")
@@ -29,14 +27,9 @@ def pass_decryptor():
     while True:
         randomlist = random.sample(range(0, 127), 9)
         if sum(randomlist) == total:
-            result = [chr(i) for i in randomlist]
+            result = [chr(j) for j in randomlist]
             result.insert(1, chr(83))
             return ''.join(result)
 
 for i in range(0, 10):
     print(pass_decryptor())
-
-
-
-
-

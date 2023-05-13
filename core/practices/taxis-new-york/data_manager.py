@@ -7,7 +7,9 @@ def getDataframe(path, dtype):
     if ".xlsx" in path:
         return pd.read_excel(path, dtype=dtype, )
     elif ".csv" in path:
-        return pd.read_csv(path, delimiter=",", dtype=dtype, low_memory=False, parse_dates=parse_dates)
+        return pd.read_csv(
+            path, delimiter=",", dtype=dtype, low_memory=False, parse_dates=parse_dates
+        )
 
 def concatDataframe(p_df: iter):
     return pd.concat(p_df)
@@ -60,7 +62,9 @@ if __name__ == "__main__":
     # Add new columns
     df.loc[:, "tpep_pickup_datetime"] = df.loc[:, "tpep_pickup_datetime"].dt.date
     df.loc[:, "mes"] = pd.to_datetime(df.loc[:, "tpep_pickup_datetime"]).dt.to_period('M')
-    df.loc[:, "tipo_dia"] = pd.Series(df.loc[:, "tpep_pickup_datetime"].apply(lambda x: daytype(str(x))))
+    df.loc[:, "tipo_dia"] = pd.Series(
+        df.loc[:, "tpep_pickup_datetime"].apply(lambda x: daytype(str(x)))
+    )
     df.loc[:, "total_servicios"] = 1
 
     # Filter dates
@@ -74,7 +78,14 @@ if __name__ == "__main__":
     # Get results
     df_list = []
     for value in [df_JFK, df_regular, df_others]:
-        df_temp = value.loc[:, ["mes", "tipo_dia", "passenger_count", "trip_distance", "total_servicios"]]
+        df_temp = (
+            value.loc[:, ["mes",
+                          "tipo_dia",
+                          "passenger_count",
+                          "trip_distance",
+                          "total_servicios"]
+            ]
+        )
         df_final = df_temp.groupby(['mes', 'tipo_dia'], as_index=False).sum()
         df_list.append(df_final)
 

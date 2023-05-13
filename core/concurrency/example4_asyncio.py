@@ -4,6 +4,7 @@
 import asyncio
 import random
 
+
 # ANSI colors
 c = (
     "\033[0m",   # End of color

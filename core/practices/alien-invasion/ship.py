@@ -38,5 +38,3 @@ class Ship:
             self.x -= self.ai_game.settings.ship_speed
         # Update rect object from self.x.
         self.rect.x = self.x
-
-

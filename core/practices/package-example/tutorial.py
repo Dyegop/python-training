@@ -11,5 +11,5 @@ import resources
 o1 = resources.One()
 o2 = resources.Two()
 
-# If we delete the lines "from module_one import One" and "from module_two import Two" from the __init__.py file,
-# we will not be able to access One() and Two() class directly from resources
+# If we delete the lines "from module_one import One" and "from module_two import Two" from the
+# __init__.py file, we will not be able to access One() and Two() class directly from resources

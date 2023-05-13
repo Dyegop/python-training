@@ -5,7 +5,9 @@ import re
 
 # Variables:
 
-path1 = r'C:\Users\ponce\Documents\Education\Degree - Software Engineering\Python\Course - Python 3'
+path1 = (
+    r'C:\Users\ponce\Documents\Education\Degree - Software Engineering\Python\Course - Python 3'
+)
 path2 = r'\12-Advanced Python Modules\08-Advanced-Python-Module-Exercise'
 extracted_content = path1+path2+'\\extracted_content'
 zip_file = path1+path2+'\\unzip_me_for_instructions.zip'

@@ -7,8 +7,8 @@ IF-ELSE:
             statement 2
 
 NESTED IF-ELSE:
-    -Nested if-else works the same as 'if' statements, where if the 'if' block condition is false, then it checks to
-    elif blocks. If all blocks are false, then it executes an else statement.
+    -Nested if-else works the same as 'if' statements, where if the "if" block condition is false,
+    then it checks to elif blocks. If all blocks are false, then it executes an else statement.
         if <condition1>:
             statement 1
         elif <condition2>:
@@ -20,8 +20,8 @@ NESTED IF-ELSE:
             statement 3
 
 FOR LOOP:
-    -For loop statement iterates over a sequence(list, tuple or string) and executes statements until a given condition
-    is True or the loop reaches the end of the sequence.
+    -For loop statement iterates over a sequence(list, tuple or string) and executes statements
+    until a given condition is True or the loop reaches the end of the sequence.
         for value in sequence:
             statement
 
@@ -39,7 +39,8 @@ BREAK:
             statement executed if <condition> is False
 
 CONTINUE:
-    -Continue statement won’t continue the loop, it executes statements until the condition matches True.
+    -Continue statement won’t continue the loop, it executes statements until the condition
+    matches True.
         while <condition>:
             statement 1
             if <condition>:
@@ -47,7 +48,8 @@ CONTINUE:
             statement executed if <condition> is True
 
 PASS:
-    -The pass contains a Null value. It is basically saying to the python compiler that does nothing
+    -The pass contains a Null value. It is basically saying to the python compiler that does
+    nothing.
         for value in sequence:
             pass
 """
@@ -61,7 +63,7 @@ currencies = 0.8, 1.2
 usd, eur = currencies
 
 # Destructuring in a loop
-# If you've got a list of lists, such as friend names and ages, you can destructure in a loop like this:
+# If you have a list of lists, such as friend names and ages, you can destructure in a loop:
 friends = [("Rolf", 25), ("Anne", 37), ("Charlie", 31), ("Bob", 22)]
 for name, age in friends:  # for friend in friends first
     print(f"{name} is {age} years old.")

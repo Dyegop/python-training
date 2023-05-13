@@ -16,7 +16,7 @@ for i in range(0, 11, 2):
     print(i)
 
 
-# Use a List Comprehension to create a list of all numbers between 1 and 50 that are divisible by 3.
+# Use a List Comprehension to create a list of numbers between 1 and 50 that are divisible by 3.
 lista1 = [i for i in range(1, 51) if i % 3 == 0]
 print(lista1)
 
@@ -29,7 +29,8 @@ for i in st.split():
 
 
 # Write a program that prints the integers from 1 to 100.
-# But for multiples of three print "Fizz" instead of the number, and for the multiples of five print "Buzz".
+# But for multiples of three print "Fizz" instead of the number, and for the multiples of five
+# print "Buzz".
 # For numbers which are multiples of both three and five print "FizzBuzz".
 for i in range(1, 101):
     if i % 3 == 0 and i % 5 == 0:
@@ -67,8 +68,8 @@ while True:
     print(pig_latin(a))
 
 
-# LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even,
-# but returns the greater if one or both numbers are odd
+# LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both
+# numbers are even, but returns the greater if one or both numbers are odd
 def is_even(num):
     if num % 2 == 0:
         return True
@@ -99,10 +100,21 @@ typetype = input("Introduce un string: ")
 print(animal_crackers(typetype))
 
 
-# PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
+# PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of
+# that letter
 while True:
     def print_big(letter):
-        my_dict = {1: "*****", 2: "*", 3: "    *", 4: "****", 5: "  **", 6: "  *  ", 7: "***", 8: "   *", 9: " *** "}
+        my_dict = {
+            1: "*****",
+            2: "*",
+            3: "    *",
+            4: "****",
+            5: "  **",
+            6: "  *  ",
+            7: "***",
+            8: "   *",
+            9: " *** "
+        }
         if letter == 'd':
             print(my_dict[4])
             print(my_dict[2] + my_dict[3])
@@ -140,7 +152,8 @@ while True:
         break
 
 
-# PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+# PAPER DOLL: Given a string, return a string where for every character in the original there are
+# three characters
 def paper_doll(text):
     mylist1 = []
     for i in text:
@@ -148,7 +161,8 @@ def paper_doll(text):
     print(''.join(mylist1))
 
 
-# BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum.
+# BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21,
+# return their sum.
 # If their sum exceeds 21 and there's an eleven, reduce the total sum by 10.
 # Finally, if the sum (even after adjustment) exceeds 21, return 'BUST
 def blackjack(a, b, c):
@@ -168,7 +182,8 @@ def blackjack(a, b, c):
 print(blackjack(9, 9, 11))
 
 
-# COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number
+# COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and
+# including a given number
 def count_primes(num):
     count = 0
     add = True
@@ -201,7 +216,8 @@ def ran_check(num, low, high):
 print(ran_check(5, 2, 7))
 
 
-# Write a Python function that accepts a string and calculates the number of upper case letters and lower case letters.
+# Write a Python function that accepts a string and calculates the number of upper case letters
+# and lower case letters.
 def up_low(s):
     c = Counter(s)
     upper = 0
@@ -217,7 +233,8 @@ def up_low(s):
 up_low('Hello Mr. Rogers, how are you this fine Tuesday?')
 
 
-# Write a Python function that takes a list and returns a new list with unique elements of the first list.
+# Write a Python function that takes a list and returns a new list with unique elements of the
+# first list.
 def unique_list(lst):
     unique2 = list(set(lst))
     return unique2
@@ -283,15 +300,16 @@ print(ispangram("The quick brown fox jumps over the lazy dog"))
 
 
 # Create a generator that generates the squares of numbers up to some number N
-def gensquares(N):
-    for x in range(N):
+def gensquares(n):
+    for x in range(n):
         yield x ** 2
 
 for i in gensquares(10):
     print(i)
 
 
-# Create a generator that yields "n" random numbers between a low and high number (that are inputs).
+# Create a generator that yields "n" random numbers between a low and high number (that are
+# inputs).
 def rand_num(low, high, n):
     for x in range(n):
         yield random.randint(low, high)
@@ -309,6 +327,3 @@ my_list = [1, 2, 3, 4, 5]
 gencomp = (item for item in my_list if item > 3)
 for item in gencomp:
     print(item)
-
-
-

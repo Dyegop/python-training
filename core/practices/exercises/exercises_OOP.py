@@ -1,5 +1,5 @@
-# Exercise 1: Fill in the Line class methods to accept coordinates as a pair of tuples and return the slope
-# and distance of the line.
+# Exercise 1: Fill in the Line class methods to accept coordinates as a pair of tuples and return
+# the slope and distance of the line.
 import math
 
 
@@ -9,7 +9,9 @@ class Line:
         self.coor2 = coor2
 
     def distance(self):
-        return math.sqrt(abs((self.coor2[0] - self.coor1[0]) ** 2 + (self.coor2[1] - self.coor1[1]) ** 2))
+        return math.sqrt(
+            abs((self.coor2[0] - self.coor1[0]) ** 2 + (self.coor2[1] - self.coor1[1]) ** 2)
+        )
 
     def slope(self):
         return (self.coor2[1] - self.coor1[1]) / (self.coor2[0] - self.coor1[0])
@@ -39,7 +41,7 @@ print(c.surface_area())
 class Polygon:
     def __init__(self, no_of_sides):
         self.n = no_of_sides
-        self.sides = [0 for i in range(no_of_sides)]
+        self.sides = [0 for _ in range(no_of_sides)]
         self.name = "name"
 
     def inputSides(self):
@@ -72,7 +74,8 @@ class BankAccount:
         self.owner = owner
         self.balance = balance
 
-    def deposit(self, income):
+    @staticmethod
+    def deposit(income):
         print(f"Deposit of {income}accepted")
 
     def withdraw(self, outcome):

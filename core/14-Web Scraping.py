@@ -12,7 +12,7 @@ REQUEST:
 -Use request to grab a page. This may fail if you have a firewall blocking your app.
 -Object type will be an HTTP response
 -Request object contains website information and the following attributes:
-    -text: a string of text inside an html tag.
+    -text: a string of text inside a html tag.
     -content: raw content of a website.
 
 BEAUTIFULSOUP:
@@ -25,8 +25,10 @@ BEAUTIFULSOUP:
     -html5lib -> Python-based, it is slow and can create valid HTML5.
 -Types of Objects in Beautiful Soup:
     -Tag: an XML or HTML tag in the web document. Tags have a lot of attributes and methods.
-    -NavigableString: a string or set of characters that correspond to the text present within a tag.
-    -BeautifulSoup: it represents the entire web document and supports navigating and searching the document tree.
+    -NavigableString: a string or set of characters that correspond to the text present within a
+    tag.
+    -BeautifulSoup: it represents the entire web document and supports navigating and searching
+    the document tree.
     -Comment: the comment or information section of the document. It is a special type of string.
 """
 
@@ -73,7 +75,8 @@ print(soup.div.attrs)
 # select() -> return a list of elements from a website by taking the following arguments
 # select('tag')        - select all elements with the <tag>
 # select('#id')        - select HTML element containing the indicated id attribute
-# select('.class')     - select the HTML elements with the indicated CSS class. Spaces must be replaced for '.'
+# select('.class')     - select the HTML elements with the indicated CSS class. Spaces must
+# be replaced for '.'
 # select('div span')   - select any elements named <span> that are within an element named <div>
 # select('div > span') - select any elements named <span> directly within an element named <div>
 print(soup.select('head'))
@@ -91,8 +94,8 @@ print("\n")
 
 
 # Finding elements
-# find()     -> return first match of an string passed as argument
-# find_all() -> return all matches of an string passed as argument, in list format
+# find()     -> return first match of a string passed as argument
+# find_all() -> return all matches of a string passed as argument, in list format
 print(soup.find('h1'))
 
 # Find elements by HTML Class Name
@@ -121,7 +124,9 @@ print(computer['src'])  # printing id 'src'
 
 # Grab image link with request. Sometimes we need to fulfill the link, like adding 'https'
 image_link_recieved = '//upload.wikimedia.org/wikipedia/commons/b/be/Deep_Blue.jpg'
-image_link = requests.get('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Deep_Blue.jpg/220px-Deep_Blue.jpg')
+image_link = requests.get(
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Deep_Blue.jpg/220px-Deep_Blue.jpg'
+)
 print(image_link.content)
 
 # Save an image to a file

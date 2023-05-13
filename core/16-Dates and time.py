@@ -1,6 +1,7 @@
 """
 DATETIME:
--Time values are represented with the time class and have attributes for hour, minute, second, and microsecond.
+-Time values are represented with the time class and have attributes for hour, minute, second,
+and microsecond.
 -Date values are created using Date() class and have attributes for year, month, and day.
 """
 
@@ -33,7 +34,7 @@ print('Day  :', today.day)
 
 # Calculate differences in dates
 # Using datetime.timedelta to calculate past or future days
-# We pass weeks, days, hours, minutes, seconds, milliseconds, microseconds as argument to timedelta
+# Pass weeks, days, hours, minutes, seconds, milliseconds, microseconds as argument to timedelta
 now = datetime.datetime.now()
 yesterday = now - datetime.timedelta(days=1)
 next_week = now + datetime.timedelta(weeks=1)

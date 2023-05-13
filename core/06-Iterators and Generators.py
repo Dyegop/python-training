@@ -1,23 +1,26 @@
 """
 ITERATORS:
 -Reading items one by one is called iteration.
--Iterators are containers for objects so that you can loop over the them.
--Technically, in Python, an iterator is an object which implements the iterator protocol, which consist of the methods
-__iter__() and __next__().
+-Iterators are containers for objects so that you can loop over them.
+-Technically, in Python, an iterator is an object which implements the iterator protocol, which
+consist of the methods __iter__() and __next__().
 
 GENERATORS:
 -A generator is a function that remembers the state it’s in, in between executions.
 -Generators do not store all the values in memory, they generate the values on the fly.
--Generators give us an easier way to create python iterators, using yield keyword instead of return.
+-Generators give us an easier way to create python iterators, using yield keyword instead of
+return.
 -Generators are best for calculating large sets of results saving memory.
 
 YIELD:
 -Generators are created using keyword yield.
 -Yield is similar to return, except the function will return a generator.
--When you call a function that has yield, the code you have written in the function body only run the first time
+-When you call a function that has yield, the code you have written in the function body only run
+the first time.
 -The second time, only yield statement will be executed.
--Using "yield from" we don't need to iterate over a generator so we can use next() to print a value without a loop
--We can use yield to recieve data
+-Using "yield from" we don't need to iterate over a generator, so we can use next() to print a
+value without a loop.
+-We can use yield to recieve data.
 
 
 https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do
@@ -56,7 +59,7 @@ g = simple_gen()
 print(next(g))
 
 
-# iter() -> create an object which can be iterated one element at a time. Useful to iterate over strings
+# iter() -> create an object which can be iterated one element at a time
 s_iter = iter('hello')
 print(next(s_iter))
 

@@ -8,8 +8,10 @@ NDARRAY CLASS:
 -A numpy ndarray can hold only a single datatype.
 -It has the following attributes:
     -ndim: the number of axes (dimensions) of the array. It is also called the rank of the array.
-    -shape: the size of the array in each dimension. The length of the shape tuple is the rank or ndim.
-    -size: the total number of elements in the array. It is equal to the product of the elements of the shape tuple.
+    -shape: the size of the array in each dimension. The length of the shape tuple is the rank or
+    ndim.
+    -size: the total number of elements in the array. It is equal to the product of the elements
+    of the shape tuple.
     -type: the type of the elements in the array. It can be created or specified using Python.
 """
 
@@ -74,7 +76,8 @@ arr = np.arange(0, 11)
 arr2 = np.arange(2, 9)
 arr3 = np.arange(25)
 
-# arange() -> return evenly spaced values within a given interval. We can set a step size (optional, 1 by default)
+# arange() -> return evenly spaced values within a given interval. We can set a step size
+# (optional, 1 by default)
 print(np.arange(0, 10))
 print(np.arange(0, 11, 2))
 
@@ -90,7 +93,8 @@ arr4_stack = np.hstack(arr2, arr)
 # linspace() -> return evenly spaced numbers over a specified interval. Default space is 50
 print(np.linspace(0, 10))
 
-# max/min()       -> find max or min values. An optional initial parameter can be filled to indicate the beginning
+# max/min()       -> find max or min values. An optional initial parameter can be filled to
+# indicate the beginning
 # argmax/argmin() -> find index locations for max or min values
 arr.max(initial=0)
 arr.min(initial=0)
@@ -118,7 +122,8 @@ np.random.randint(1, 100, 10)
 np.random.ranf(5)
 
 # identity(n)        -> create an identity matrix of n dimension
-# linalg.inv(matrix) -> find the inverse of an array and add its diagonal data elements (only for squared matrix)
+# linalg.inv(matrix) -> find the inverse of an array and add its diagonal data elements (only
+# for squared matrix)
 # transpose()        -> interchange rows as columns, and vice-versa
 identity_matrix = np.identity(3)
 inv_matrix = np.linalg.inv(my_matrix)

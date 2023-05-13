@@ -7,14 +7,16 @@ PDF AND WORD FILES:
 -Docx allows your Python programs to read, edit and create Word files.
 
 CSV FILES:
--CSV stands for “comma-separated values,” and CSV files are simplified spreadsheets stored as plaintext files.
+-CSV stands for “comma-separated values,” and CSV files are simplified spreadsheets stored as
+plaintext files.
 -CSV module makes it easy to parse CSV files.
 
 JSON FILES:
--JSON (JavaScript Object Notation) is a popular way to format data as a single human-readable string.
+-JSON (JavaScript Object Notation) is a popular way to format data as a single human-readable
+string.
 -JSON is the native way that JavaScript programs write their data structures.
--Many websites offer JSON content as a way for programs to interact with the website known as application programming
-interface (API).
+-Many websites offer JSON content as a way for programs to interact with the website known as
+application programming interface (API).
 """
 
 import openpyxl
@@ -34,7 +36,7 @@ print(workbook.sheetnames)
 print(workbook.active)
 
 # Sheet attributes
-# sheet.title       -> return title of an excel sheet
+# sheet.title       -> return title of an Excel sheet
 # sheet.max_row     -> return the highest row number
 # sheet.max_column  -> return the highest column number
 sheet = workbook['Sheet3']

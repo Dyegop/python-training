@@ -8,8 +8,8 @@ friends = deque(('Rolf', 'Jose', 'Charlie', 'Jen', 'Anna'))
 def friend_upper():
     while friends:
         friend = friends.popleft().upper()
-        greeting = yield
-        print(f'{greeting} {friend}')
+        _greeting = yield
+        print(f'{_greeting} {friend}')
 
 
 async def greet(g):
@@ -21,9 +21,6 @@ async def greet(g):
 greeter = greet(friend_upper())
 greeter.send(None)
 greeter.send('Hello')
-
-greeting = input('Enter a greeting: ')
-greeter.send(greeting)
 
 greeting = input('Enter a greeting: ')
 greeter.send(greeting)

@@ -10,32 +10,36 @@ OBJECTS:
         *There is not abstract methods.
         *Every method passes self as argument (my_method(self, *args)).
         *Declaration order is not important, since all methods belong to a class.
-        *Methods that don't apply to the object are static, and need to be decorated with @staticmethod
+        *Methods that don't apply to the object are static, and need to be decorated with
+        @staticmethod.
 
 CLASSES:
--Class: blueprint of an object, containing all the attributes and methods. When class is defined, only the description
-for the object is defined (no memory or storage is allocated).
--Self keyword: self is a reference to the instance itself and gives the object access to the attributes
-and methods in the class.
--Class attributes: it's an attribute of the class, rather than an attribute of an instance of a class. All objects of
-the class have access to class attributes. You should use class attributes to do the following:
+-Class: blueprint of an object, containing all the attributes and methods. When class is defined,
+only the description for the object is defined (no memory or storage is allocated).
+-Self keyword: self is a reference to the instance itself and gives the object access to the
+attributes and methods in the class.
+-Class attributes: it's an attribute of the class, rather than an attribute of an instance of a
+class. All objects of the class have access to class attributes. You should use class attributes
+to do the following:
     -Storing constants.
     -Defining default values.
     -Tracking all data across all instances of a given class.
     -Performance.
 -Class methods: a method that is bound to a class rather than its object.
     -It doesn't require creation of a class instance, much like staticmethod.
-    -It works with the class since its parameter is always the class itself, while statics methods do not know anything
-    about the class.
-    -Class method can be called both by the class and its object: Class.classmethod() or Class().classmethod()
+    -It works with the class since its parameter is always the class itself, while statics methods
+    do not know anything about the class.
+    -Class method can be called both by the class and its object: Class.classmethod() or
+    Class().classmethod().
 
 
 
 NAMESPACES:
--Python classes and instances of classes each have their own distinct namespaces: MyClass.__dict__ and
-instance_of_MyClass.__dict__, respectively.
--When you try to access an attribute from an instance of a class, it first looks at its instance namespace. If it finds
-the attribute, it returns the associated value. If not, it then looks in the class namespace.
+-Python classes and instances of classes each have their own distinct namespaces: MyClass.__dict__
+and instance_of_MyClass.__dict__, respectively.
+-When you try to access an attribute from an instance of a class, it first looks at its instance
+namespace. If it finds the attribute, it returns the associated value. If not, it then looks in
+the class namespace.
 -The instance namespace takes supremacy over the class namespace.
 
 __INIT__:
@@ -45,12 +49,14 @@ __INIT__:
 
 INHERITANCE:
 -It refers to defining a new class with little or no modification to an existing class.
--The new class is called derived (or child) class. The one from which it inherits is called the base (or parent) class.
+-The new class is called derived (or child) class. The one from which it inherits is called the
+base (or parent) class.
 -Derived class inherits attributes and functions from the parent class.
 -New attributes and functions can be added to derived class.
--After the base class's __init__ ran, the derived object has the attributes set there as it's the very same object as
-the self in the derived class' __init__. You can and should just use self.some_var everywhere. Super() is only for
-accessing stuff from base classes, but instance variables are (as the name says) part of an instance, not part of that
+-After the base class's __init__ ran, the derived object has the attributes set there as it's the
+very same object as the self in the derived class' __init__.
+-You can and should just use self.some_var everywhere. Super() is only for accessing stuff from
+base classes, but instance variables are (as the name says) part of an instance, not part of that
 instance's class.
 
 MULTIPLE INHERITANCE
@@ -59,37 +65,44 @@ MULTIPLE INHERITANCE
 
 METHOD RESOLUTION ORDER:
 -The method resolution order (or MRO) tells Python how to search for inherited methods.
--MRO tells you exactly where Python will look for a method you’re calling with super() and in what order.
+-MRO tells you exactly where Python will look for a method you’re calling with super() and in
+what order.
 -Every class has an .__mro__ attribute that allows us to inspect the order.
 
 ENCAPSULATION:
 -Protected members: prefixing the name of the member by a single underscore '_'.
--Private members: there is no existence of Private instance variables that cannot be accessed except inside a class.
+-Private members: there is no existence of Private instance variables that cannot be accessed
+except inside a class.
 However, to define a private member, prefix the member name with double underscore “__”.
--Python’s private and protect member can be accessed outside the class through python name mangling.
+-Python’s private and protect member can be accessed outside the class through python name
+mangling.
 
 POLYMORPHISM:
 -Polymorphism is an ability in OOP to use a common interface for multiple forms (data types).
--It allows us to define methods in the child class with the same name as defined in their parent class.
+-It allows us to define methods in the child class with the same name as defined in their parent
+class.
 -You can re-implement method in the child class. This process is known as Method Overriding.
--You can access overridden method of the parent class in the child class, by using the super() function.
+-You can access overridden method of the parent class in the child class, by using the super()
+function.
 
 ABSTRACT CLASS AND INTERFACES
 -An abstract class can be considered as a blueprint for other classes.
--Abstract classes allows you to create a set of methods and attributes that must be implemented or override within any
-child classes built from it.
+-Abstract classes allows you to create a set of methods and attributes that must be implemented
+or override within any child classes built from it.
 -Abstract classes can't be instantiated, they must be inhereted by another class.
--Abstract classes do not need to implement all their functionalities. You can leave some of them as abstract so that
-your subclasses must implement them.
--The difference with interfaces is that they only allows you to define a functionality, not implement it.
--Python comes with a module that provides the base for defining Abstract Base classes(ABC) called ABC
--ABC works by decorating methods of the base class as abstract and then registering concrete classes
-as implementations of the abstract base.
+-Abstract classes do not need to implement all their functionalities. You can leave some of them
+as abstract so that your subclasses must implement them.
+-The difference with interfaces is that they only allows you to define a functionality, not
+implement it.
+-Python comes with a module that provides the base for defining Abstract Base classes(ABC)
+called ABC.
+-ABC works by decorating methods of the base class as abstract and then registering concrete
+classes as implementations of the abstract base.
 
 PYTHON PROPERTY
 -Python @property decorator turns a method into a “getter” for a read-only attribute
--A property object has getter, setter, and deleter methods usable as decorators that create a copy of the property
-with the corresponding accessor function set to the decorated function
+-A property object has getter, setter, and deleter methods usable as decorators that create a
+copy of the property with the corresponding accessor function set to the decorated function.
 """
 
 from abc import ABCMeta, abstractmethod
@@ -181,7 +194,8 @@ class Square(Rectangle):
         # This object allows you to call that superclass’s methods and attributes
         # We must call the constructor of the parent class with its parameters
         super().__init__(length=length, width=length, **kwargs)
-        # After the base class's __init__ ran, the derived object attributes are set as part of its own __init__
+        # After the base class's __init__ ran, the derived object attributes are set as part of
+        # its own __init__
         # So, we should just use self.some_var everywhere
         # Super is for accessing stuff from base classes
         # For example, here we should use self.area() to get the area of a Square object
@@ -242,7 +256,8 @@ class Circle(Shape):
         super().__init__(**kwargs)
         self.radius = radius
 
-    # __signature__ attribute is a typing.Signature object that describes the arguments that the class expects.
+    # __signature__ attribute is a typing.Signature object that describes the arguments that the
+    # class expects.
     __signature__ = Signature(
         parameters=[
             Parameter('radius', Parameter.POSITIONAL_OR_KEYWORD, annotation=float),
@@ -332,7 +347,8 @@ class Animal(metaclass=ABCMeta):
 
 
 # Class Dog and Monkey that inhertis from Animal
-# All abstract methods in the main abstract class must be implemented for every children by overriding them
+# All abstract methods in the main abstract class must be implemented for every children by
+# overriding them
 class Dog(Animal):
     def __init__(self, name):
         self.name = name

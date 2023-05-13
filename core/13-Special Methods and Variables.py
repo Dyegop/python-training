@@ -2,8 +2,8 @@
 OVERLOADING BUILT-IN FUNCTIONS:
 -It is possible for us to change the default behavior of Python's built-in functions.
 -To overload a function, we must define it in our class in the __overloadedFunction:__ format.
--Anytime we pass an object of our class to the overloaded function, the result will be obtained by calling our custom
-defined function.
+-Anytime we pass an object of our class to the overloaded function, the result will be obtained
+by calling our custom defined function.
 
 
 MAGIC METHODS:
@@ -20,11 +20,13 @@ __REPR__
 -__repr__ represents a class's objects as a string
 
 __CALL__
--__call__ enables Python programmers to write classes where the instances behave and can be called like functions.
+-__call__ enables Python programmers to write classes where the instances behave and can be
+called like functions.
 -x(arg1, arg2, ...) is a shorthand for x.__call__(arg1, arg2, ...).
 
 __STR__:
--It returns a string representation of an object, giving the instance of the object a readable name.
+-It returns a string representation of an object, giving the instance of the object a readable
+name.
 
 __ADD__, __SUB__
 -Magic methods for the "+" and "-" operators.
@@ -33,31 +35,34 @@ __GETITEM, __SETITEM__, __DELITEM__
 -__getitem__ is called to implement evaluation of self[key], i.e var = data_obj[2]
 -__setitem__ is called to implement assignment to self[key], i.e data_obj[2] = 4
 -__delitem__ is called to implement deletion of self[key]
--This methods should only be implemented for mappings if the objects support changes to the values for keys, or if new
-keys can be added, or for sequences if elements can be replaced
+-This methods should only be implemented for mappings if the objects support changes to the
+values for keys, or if new keys can be added, or for sequences if elements can be replaced.
 
 __NAME__:
 -Whenever the Python interpreter reads a source file, it does two things:
   -it sets a few special variables like __name__.
-  -it executes all of the code found in the file.
--Running your module as the main program, the interpreter will assign the hard-coded string "__main__"
-to the __name__ variable.
--Running your module imported by another program, the interpreter will search for your imported py file
-(along with searching for a few other variants) and, prior to executing imported py file, it will assign
-its name to the __name__ variable.
--After the special variables are set up, the interpreter executes all the code in the module, one statement at a time.
--__Name__ is useful if you want to write a .py file that can be both used by other programs and/or libraries as a
-module, and can also be run as the main program itself. For example:
-    -Your module is a library, but you want to have a script mode where it runs some unit tests or a demo.
-    -Your module is only used as a main program, but it has some unit tests, and the testing framework works by
-    importing .py files like your script and running special test functions.
-    -Your module is mostly used as a main program, but it also provides a programmer-friendly API for advanced users.
+  -it executes all the code found in the file.
+-Running your module as the main program, the interpreter will assign the hard-coded string
+"__main__" to the __name__ variable.
+-Running your module imported by another program, the interpreter will search for your imported
+py file (along with searching for a few other variants) and, prior to executing imported py file,
+it will assign its name to the __name__ variable.
+-After the special variables are set up, the interpreter executes all the code in the module, one
+statement at a time.
+-__Name__ is useful if you want to write a .py file that can be both used by other programs and/or
+libraries as a module, and can also be run as the main program itself. For example:
+    -Your module is a library, but you want to have a script mode where it runs some unit tests
+    or a demo.
+    -Your module is only used as a main program, but it has some unit tests, and the testing
+    framework works by importing .py files like your script and running special test functions.
+    -Your module is mostly used as a main program, but it also provides a programmer-friendly API
+    for advanced users.
 
 __DIR__:
 -It tries to return a list of valid attributes of the object
 -If the object has __dir__() method, the method will be called and return the list of attributes.
--If the object doesn't have __dir__() method, this method tries to find information from the __dict__ attribute
-(if defined), and from type object.
+-If the object doesn't have __dir__() method, this method tries to find information from the
+__dict__ attribute (if defined), and from type object.
 
 __NEXT__, __ITER__
 -__next__ returns the next item for an iteration.
@@ -210,14 +215,16 @@ print("after __name__ guard")
 # 1- It prints the string "before import" (without quotes).
 # 2- It loads the math module and assigns it to a variable called math.
 # 3- It prints the string "before functionA".
-# 4- It executes the def block, creating a function object, then assigning that function object to a variable functionA.
+# 4- It executes the def block, creating a function object, then assigning that function object
+# to a variable functionA.
 # 5- It prints the string "before functionB".
-# 6- It executes the second def block, creating another function object, then assigning it to a variable functionB.
+# 6- It executes the second def block, creating another function object, then assigning it to a
+# variable functionB.
 # 7- It prints the string "before __name__ guard".
-# 8- if your module is the main program -> it will see that __name__ was indeed set to "__main__" and it calls and
-# executes the two functions
-# 8- if your module is imported by another program -> __name__ will be renamed to the the imported module and it'll
-# skip the body of the if statement
+# 8- if your module is the main program -> it will see that __name__ was indeed set to "__main__"
+# and it calls and executes the two functions
+# 8- if your module is imported by another program -> __name__ will be renamed to the the imported
+# module, and it'll skip the body of the if statement
 # 9- It will print the string "after __name__ guard" in both situations.
 
 

@@ -4,7 +4,9 @@ import numpy as np
 # EXERCISE 1:
 
 # Dataset:
-country = np.array(['Great Britain', 'China', 'Russia', 'United States', 'Korea', 'Japan', 'Germany'])
+country = np.array(
+    ['Great Britain', 'China', 'Russia', 'United States', 'Korea', 'Japan', 'Germany']
+)
 country_code = np.array(['GBR', 'CHN', 'RUS', 'US', 'KOR', 'JPN', 'GER'])
 country_medal_gold = np.array([29, 38, 24, 46, 13, 7, 11])
 country_medal_silver = np.array([17, 28, 25, 28, 8, 14, 11])
@@ -15,7 +17,8 @@ country_medal_bronze = np.array([19, 22, 32, 29, 7, 17, 14])
 print(country[country_medal_gold.argmax()])
 print(country[country_medal_gold > 20])
 
-# Evaluate the dataset and print the name of each country with its gold medals and total number of medals
+# Evaluate the dataset and print the name of each country with its gold medals and total number
+# of medals
 for i in range(len(country)):
     n_medals = country_medal_gold[i]
     sum_medals = country_medal_gold[i] + country_medal_silver[i] + country_medal_bronze[i]

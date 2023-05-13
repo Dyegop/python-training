@@ -1,17 +1,20 @@
 """
 BASIC CONCEPTS:
--Time-complexity: aka "Big O" or "Big Oh", it is the computational complexity that describes the amount of computer
-time it takes to run an algorithm.
-    -See https://wiki.python.org/moin/TimeComplexity for information about time-complexity in every Python operation
-    -See https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities for general information
+-Time-complexity: aka "Big O" or "Big Oh", it is the computational complexity that describes the
+amount of computer time it takes to run an algorithm.
+    -See https://wiki.python.org/moin/TimeComplexity for information about time-complexity in
+    every Python operation.
+    -See https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities for
+    general information.
 
--Hash table: a hash table is a structure that is designed to store a list of key-value pairs, without compromising on
-speed and efficiency of manipulating and searching the structure.
-    -The effectiveness of the hash table is derived from the hash function, a function that computes the index of the
-    key-value pair.
+-Hash table: a hash table is a structure that is designed to store a list of key-value pairs,
+without compromising on speed and efficiency of manipulating and searching the structure.
+    -The effectiveness of the hash table is derived from the hash function, a function that
+    computes the index of the key-value pair.
     -In python, dictionaries and sets are implemented using a hash table.
     -Hash collisions are when two pieces of data in a hash table share the same hash value.
-    -Hash collisions are practically unavoidable when hashing a random subset of a large set of possible keys.
+    -Hash collisions are practically unavoidable when hashing a random subset of a large set of
+    possible keys.
     -Python uses open addressing to resolve hash coliisions.
 
 
@@ -57,8 +60,8 @@ DICTIONARIES:
 -Properties:
     -Mutable: their elements can be changed.
     -Items are unordered and not unique.
-    -Values can be retrieved using keys that must be immutable (string, number, tuple with immutable elements) and
-    unique.
+    -Values can be retrieved using keys that must be immutable (string, number, tuple with
+    immutable elements) and unique.
 """
 
 
@@ -80,9 +83,9 @@ new_string2 = myString1[-1]  # return the last character
 new_string3 = myString1[1:3]  # return characters 1, 2
 
 # String formatting with % Operator
-# %s    -> character substitute for strings or any object with a string representation, like numbers
+# %s    -> character substitute for strings or any object with a string repr, like numbers
 # %d    -> character substitute for integers
-# %f    -> character substitute for floats, use %.<number of digits>f for a fixed amount of digits
+# %f    -> character substitute for floats, use %.<number of digits>f for a fixed amount
 # %x/%X -> character substitute integers in hex representation (lowercase/uppercase)
 print('Hello %s' % 'Diego')
 print('Hello %s, are you %d?' % ('Diego', 29))
@@ -99,7 +102,7 @@ print('A {p} saved is a {p} earned.'.format(p='penny'))
 name = 'Fred'
 print(f"He said his name is {name}.")
 print(f"He said his name is {name!r}")
-print(f"{5:02}")               # Print "5" with leading zeros up to a two digit number - output: 05
+print(f"{5:02}")  # Print "5" with leading zeros up to a two-digit number - output: 05
 i = 1827
 print(f"{26:0{len(str(i))}}")  # Print "26" with leading zeros up to length of i - output: 0026
 

@@ -17,5 +17,3 @@ if __name__ == "__main__":
     conn = SQLiteConnection('data/frogtek.db')
     conn.connect()
     conn.query_data(query)
-
-

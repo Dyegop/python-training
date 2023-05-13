@@ -7,10 +7,11 @@ CLASSES:
     -Table: inherits some attributes from player
     -Game: main methods of the game
 """
-from .methods import *
+
+from methods import *
 import time
 
-# PROGRAM STARTS HERE
+
 t = 1
 print("Welcome to Nessy's Casino, sir\n")
 time.sleep(t)
@@ -74,4 +75,3 @@ while True:
         menu_selector()
     except ValueError as ve:
         print(f"Error, {ve}\nPlease provide proper value")
-

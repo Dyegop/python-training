@@ -9,8 +9,8 @@ ERROR HANDLING:
 
 RAISING EXCEPTIONS:
 -Raise keyword allows you to raise your own exceptions.
--If no expressions are present, raise re-raises the last exception that was active in the current scope.
-further up the call stack.
+-If no expressions are present, raise re-raises the last exception that was active in the current
+scope further up the call stack.
 -A raise statement must include the following elements:
     -The raise keyword
     -A call to the Exception() function
@@ -24,8 +24,8 @@ ASSERTIONS:
 
 LOGGING:
 -Python’s logging module makes it easy to create a record of custom messages that you write.
--These log messages will describe when the program execution has reached the logging function call and list any
-variables you have specified at that point in time.
+-These log messages will describe when the program execution has reached the logging function
+call and list any variables you have specified at that point in time.
 """
 
 import sys
@@ -136,11 +136,11 @@ logging.basicConfig(filename='myProgramLog.txt', filemode='w', level=logging.DEB
 
 # Logging levels provide a way to categorize your log messages by importance
 # To debug data, use of the following functions according to the level you want to use
-# logging.debug()    -> logs a message with level DEBUG. Used for small details.
-# logging.info()     -> logs a message with level INFO. Used to record information on general event
-# logging.warning()  -> logs a message with level WARNING. Used to indicate a problem but the program still works
-# logging.error()    -> logs a message with level ERROR. Used to record an error that caused the program to fail
-# logging.critical() -> logs a message with level CRITICAL. Used to indicate a fatal error
+# logging.debug()    -> logs a DEBUG msg. Used for small details.
+# logging.info()     -> logs a INFO msg. Used to record information on general event
+# logging.warning()  -> logs a WARNING msg. Used to indicate a problem but the program still works
+# logging.error()    -> logs a ERROR msg. Used to record an error that caused the program to fail
+# logging.critical() -> logs a CRITICAL msg. Used to indicate a fatal error
 logging.debug('Some debugging details.')
 logging.info('The logging module is working.')
 logging.warning('An error message is about to be logged.')

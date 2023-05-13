@@ -8,8 +8,10 @@ Counter():
 -Elements are stored as dictionary keys and the counts of the objects are stored as the value.
 
 defaultdict():
--defaultdict is a dictionary-like object but takes a first argument (default_factory) as a default data type.
--if a key is not found in the dictionary, instead of a KeyError being thrown, a new entry will be created.
+-defaultdict is a dictionary-like object but takes a first argument (default_factory) as a
+default data type.
+-if a key is not found in the dictionary, instead of a KeyError being thrown, a new entry will be
+created.
 -Using defaultdict is faster than doing the same using dict.set_default() method.
 
 OrderedDict():
@@ -18,7 +20,8 @@ OrderedDict():
 namedtuple():
 -A namedtuple assigns names, as well as the numerical index, to each member.
 -The difference with standard tuple is that they only use numerical indexes.
--Each kind of namedtuple is represented by its own class, created by using the namedtuple() factory function.
+-Each kind of namedtuple is represented by its own class, created by using the namedtuple()
+factory function.
 -The arguments are the name of the new class and a string containing the names of the elements.
 """
 
@@ -44,7 +47,10 @@ print(Counter('aabsbsbsbhshhbbsbs'))
 s = 'How many times does each word show up word times each each word'
 words = s.split()
 Counter(words)
-# output: Counter({'How': 1, 'does': 1, 'each': 3, 'many': 1, 'show': 1, 'times': 2, 'up': 1, 'word': 3})
+"""
+output: Counter({'How': 1, 'does': 1, 'each': 3, 'many': 1, 
+                 'show': 1, 'times': 2, 'up': 1, 'word': 3})
+"""
 
 # most_common() -> return most common elements
 c = Counter(words)

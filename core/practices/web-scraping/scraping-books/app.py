@@ -67,6 +67,4 @@ if __name__ == "__main__":
     - 'q' to exit
     Enter your choice: '''
 
-
     menu()
-

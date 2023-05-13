@@ -27,7 +27,7 @@ print(list(b))
 
 # lower()      -> return the lowercase version of the string
 # upper()      -> return the uppercase version of the string
-# capitalize() -> return a copy of the string with its first character capitalized and the rest lowercased
+# capitalize() -> return a copy of the str with first character capitalized, rest lowercased
 print(string.lower())
 print(string.upper())
 print(string.capitalize())
@@ -44,17 +44,18 @@ print(string.split(','))
 print(any(mylist))  # Return True, since all elements except 0 evaluates to True
 print(all(mylist))  # Return False, since 0 evaluates to False
 
-# count(substring, start=n, stop=n) –> return the number of times the substring is in the given string
+# count(substring, start=n, stop=n) –> return the number of times the substr is in the given str
 # start - optional, initial value where the function begins (0 by default)
 # stop  - optional, initial value where the function ends (1 by default)
 print(string.count('s', 4, 10))
 
 # enumerate(iterable, start=n) –> take a collection and return it as an enumerate object
-# output must converted to a collection (list, tuple...) in order to print it
+# output must be converted to a collection (list, tuple...) in order to print it
 # start - optional, initial value where the function begins (0 by default)
 print(list(enumerate(mylist)))
 
-# filter(function, iterable) -> constructs an iterator from elements of an iterable for which a function returns true
+# filter(function, iterable) -> constructs an iterator from elements of an iterable for which a
+# function returns true
 letters = ['a', 'b', 'd', 'e', 'i', 'j', 'o']
 def filterVowels(letter):
     if letter in string:
@@ -63,8 +64,8 @@ def filterVowels(letter):
         return False
 filteredVowels = filter(filterVowels, letters)
 
-# map(function, iterable) -> execute a specified function for each item in an iterable and return an iterator
-# To print results, cast map as a list
+# map(function, iterable) -> execute a specified function for each item in an iterable and
+# return an iterator. To print results, cast map as a list
 def myfunc(n):
     return len(n)
 x = map(myfunc, ('apple', 'banana', 'cherry'))
@@ -83,15 +84,16 @@ print(dict(zip(friends, time_since_seen)))
 # step  - optional, incremental value (1 by default)
 range(0, 10, 2)
 
-# replace('old_str', 'new_str', n) -> return a string where all occurrences of old_str have been replaced by new_str
+# replace('old_str', 'new_str', n) -> return a string where all occurrences of old_str have been
+# replaced by new_str
 # n - optional, set how many occurrences are replaced (all by default)
 print(string.replace('example', 'test', 1))
 
 # reversed(seq) -> return an iterator that accesses the given sequence in the reverse order
-# output must converted to a collection (list, tuple...) in order to print it
+# output must be converted to a collection (list, tuple...) in order to print it
 print(list(reversed(seq_tuple)))
 
-# round(float, n) -> return a floating point number that is a rounded version of the specified number
+# round(float, n) -> return a floating point number that is a rounded version of the given number
 # n - optional, the number of decimals to use when rounding the number (0 by default)
 print(round(17.24563, 2))
 
@@ -99,7 +101,8 @@ print(round(17.24563, 2))
 # start - optional, initial value where the function begins (0 by default)
 print(sum(mylist))
 
-# startswith/endswith(string, start=n, stop=n) –> return TRUE if the string starts/ends with the given string
+# startswith/endswith(string, start=n, stop=n) –> return TRUE if the string starts/ends with the
+# given string
 # start - optional, initial value where the function begins (0 by default)
 # stop  - optional, initial value where the function ends (1 by default)
 string.startswith('T', 10)
@@ -157,7 +160,7 @@ mytuple.index('cat')
 # Use with: list/sets/dictionaries
 # for lists, provide index of a value to be removed
 # for sets, remove a random value
-# for dictionaries, remove the item with key and return its value or default_value if key is not found
+# for dicts, remove the item with key and return its value or default_value if key not found
 mylist.pop()
 mylist.pop(5)
 myset.pop()
@@ -188,7 +191,7 @@ mylist.reverse()
 # add()                         -> add the element given to the set
 # difference(set_arg)           -> return elements that doesn't exist in set_arg
 # discard()                     -> remove an element from the set if it is a member
-# intersection(set_arg)         –> return the intersection (common values) of two sets as a new set
+# intersection(set_arg)         –> return the intersection (common values) of two sets as new set
 # issubset(set_arg)             -> return True if another set contains this set
 # issuperset(set_arg)           –> return True if this set contains another set
 # symmetric_difference(set_arg) –> return the symmetric difference of two sets as a new set
@@ -207,9 +210,12 @@ myset.update(myset2)
 
 
 # Dictionary functions:
-# fromkeys(seq, v)   –> return a new dictionary with keys from a sequence (seq) and an optional value (None by default)
-# get(key, v)        –> return the value for the specified key. If key does not exit, it returns v (None by default)
-# setdefault(key, v) –> if key exists, return its value. If not, insert key with a value v (None by default)
+# fromkeys(seq, v)   –> return a new dictionary with keys from a sequence (seq) and an optional
+# value (None by default)
+# get(key, v)        –> return the value for the specified key. If key does not exit, it returns
+# v (None by default)
+# setdefault(key, v) –> if key exists, return its value. If not, insert key with a value v
+# (None by default)
 # items()            –> return a list of dictionary's (key, value) tuple pairs
 # keys()             -> return a new view of dictionary's keys
 # popitem()          -> remove and return an arbitary item (key, value)

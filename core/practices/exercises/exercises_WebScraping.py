@@ -25,7 +25,8 @@ print(example.select('.star-rating.Two'))  # better way
 print(example.select('a'))
 print(example.select('a')[1]['title'])
 
-# Now, we use a for loop to grab filter the title for all two stars books and save result into a list
+# Now, we use a for loop to grab filter the title for all two stars books and save result into
+# a list
 two_star_titles = []
 
 for n in range(1, 51):
@@ -45,7 +46,8 @@ for n in range(1, 51):
 # Exercise 2 - Complete the required tasks
 # Website: http://quotes.toscrape.com/
 
-# Use requests library and BeautifulSoup to connect to the website and get the HMTL text from the homepage
+# Use requests library and BeautifulSoup to connect to the website and get the HMTL text from
+# the homepage
 base_url = 'http://quotes.toscrape.com/'
 res = requests.get(base_url)
 soup = bs4.BeautifulSoup(res.text, "lxml")
@@ -65,21 +67,24 @@ for quote in soup.select('.text'):
 print(quotes)
 print('\n')
 
-# Inspect the site and use Beautiful Soup to extract the top ten tags from the requests text shown on the top right
-# HINT: Keep in mind there are also tags underneath each quote, try to find a class only present in the top right tags,
-# perhaps check the span.
+# Inspect the site and use Beautiful Soup to extract the top ten tags from the requests text shown
+# on the top right
+# HINT: Keep in mind there are also tags underneath each quote, try to find a class only present
+# in the top right tags, perhaps check the span.
 tags = soup.select('.tag-item')
 for tag in tags:
     print(tag.text)
 print('\n')
 
-# Notice how there is more than one page, and subsequent pages look like this http://quotes.toscrape.com/page/2/
+# Notice how there is more than one page, and subsequent pages look like this
+# http://quotes.toscrape.com/page/2/
 # Loop through all the pages and get all the unique authors on the website
-# Keep in mind there are many ways to achieve this, also note that you will need to somehow figure out how to check
-# that your loop is on the last page with quotes.
+# Keep in mind there are many ways to achieve this, also note that you will need to somehow
+# figure out how to check that your loop is on the last page with quotes.
 # For debugging purposes, I will let you know that there are only 10 pages, so the last page is
-# http://quotes.toscrape.com/page/10/, but try to create a loop that is robust enough that it wouldn't matter to know
-# the amount of pages beforehand, perhaps use try/except for this, its up to you!
+# http://quotes.toscrape.com/page/10/, but try to create a loop that is robust enough that it
+# wouldn't matter to know the amount of pages beforehand, perhaps use try/except for this,
+# it's up to you!
 url = 'http://quotes.toscrape.com/page/'
 all_authors = set()
 

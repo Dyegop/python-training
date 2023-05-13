@@ -52,9 +52,13 @@ serie_from_array = pd.Series(np.array([10, 20, 30]), ['a', 'b', 'c'])
 # data    -> input data, it can be lists, arrays or dictionaries
 # index   -> a list of index values
 # columns -> tags for each column
-df1 = pd.DataFrame(data=np.random.randn(5, 4), index='A B C D E'.split(), columns='W X Y Z'.split())
+df1 = pd.DataFrame(
+    data=np.random.randn(5, 4), index='A B C D E'.split(), columns='W X Y Z'.split()
+)
 df2 = pd.DataFrame(np.random.randn(5, 4), 'A B C D E'.split(), 'W X Y Z'.split())
-df3 = pd.DataFrame({'col1': [1, 2, 3, 4], 'col2': [444, 555, 666, 444], 'col3': ['abc', 'def', 'ghi', 'xyz']})
+df3 = pd.DataFrame(
+    {'col1': [1, 2, 3, 4], 'col2': [444, 555, 666, 444], 'col3': ['abc', 'def', 'ghi', 'xyz']}
+)
 df4 = pd.DataFrame({'A': [1, 2, np.nan], 'B': [5, np.nan, np.nan], 'C': [1, 2, 3]})
 df5 = pd.DataFrame({'Company': ['GOOG', 'GOOG', 'MSFT', 'MSFT', 'FB', 'FB'],
                     'Person': ['Sam', 'Charlie', 'Amy', 'Vanessa', 'Carl', 'Sarah'],
@@ -162,14 +166,16 @@ print(df3['col2'].nunique())
 print(df3.loc[df3['abc'].idxmax()])
 
 # Count values
-# value_counts(sort=)         -> return how many times each unique value occur in a column in descending order
+# value_counts(sort=)         -> return how many times each unique value occur in a column in
+# descending order
 # count(axis=, numeric_only=) -> count non-NA cells for each column or row
 print(df3.count())
 print(df3['col2'].value_counts())
 
 # Check values
 # isnull()       -> find or check null values
-# isin(values)   -> check whether each element in the DataFrame is contained in values, returning a df of booleans
+# isin(values)   -> check whether each element in the DataFrame is contained in values, returning
+# a df of booleans
 print(df3.isnull())
 print(df3.loc[df3['col2'].isin(444)])  # print values in column 'col2' that are equal to 444
 
@@ -202,7 +208,8 @@ df3['col1'].agg("sum", "min")
 df3.drop('E', axis=0, inplace=True)
 
 # dropna(axis=, how=, thresh=, subset=, inplace=) -> remove missing values
-# how='any'/'all' - remove any rows/columns with missing values or only rows/columns with all missing values
+# how='any'/'all' - remove any rows/columns with missing values or only rows/columns with all
+# missing values
 # thresh='value'  - determine how many missing values a row or columns must have to be removed
 df4.dropna(axis=0, how='all', thresh=None, subset=None, inplace=False)
 
@@ -242,7 +249,7 @@ print(df3.loc['G1'].loc[1])
 # Set names to multiple indexes
 df3.index.names = ['Group', 'Num']
 
-# Return cross section of indexes with xs()
+# Return cross-section of indexes with xs()
 print(df3.xs(['G1', 1]))
 print(df3.xs(1, level='Num'))
 
@@ -319,8 +326,10 @@ df_html = pd.read_html('http://www.fdic.gov/bank/individual/failed/banklist.html
 
 
 # Write data to several sources
-# Dataframes, Series and Indexes can be written to different files or datatypes (dict, list, str, csv, excel, etc)
-# Check https://pandas.pydata.org/pandas-docs/stable/reference/io.html for more information about arguments
+# Dataframes, Series and Indexes can be written to different files or datatypes (dict, list, str,
+# csv, excel, etc)
+# Check https://pandas.pydata.org/pandas-docs/stable/reference/io.html for more information
+# about arguments
 # to_csv()     -> save data to csv file
 # to_excel()   -> save data to excel file
 # to_json()    -> save data to json file
@@ -331,7 +340,7 @@ df_html = pd.read_html('http://www.fdic.gov/bank/individual/failed/banklist.html
 # Some input arguments
 # index=True/False - save/don't save index as columns
 # encoding=str     - encoding use to decode a web page
-# sheetname=str    - string used for sheet name | Only for excel
+# sheetname=str    - string used for sheet name | Only for Excel
 df_csv.to_csv("export.csv", index=False)
 df_excel.to_excel("export.xlsx", 'Sheet1')
 
@@ -349,10 +358,14 @@ df_excel.to_excel("export.xlsx", 'Sheet1')
 # For more details about plots and parameters, see Matplotlib.py
 
 # Data and stylesheet to use in our plots
-df_csv1 = pd.read_csv(r'C:\Users\ponce\Documents\Education\Software Engineering\Python\Course - Python For Data '
-                      r'Science\07- Data Visualization with Pandas\df1')
-df_csv2 = pd.read_csv(r'C:\Users\ponce\Documents\Education\Software Engineering\Python\Course - Python For Data '
-                      r'Science\07- Data Visualization with Pandas\df2')
+df_csv1 = pd.read_csv(
+    r'C:\Users\ponce\Documents\Education\Software Engineering\Python\Course - Python For Data '
+    r'Science\07- Data Visualization with Pandas\df1'
+)
+df_csv2 = pd.read_csv(
+    r'C:\Users\ponce\Documents\Education\Software Engineering\Python\Course - Python For Data '
+    r'Science\07- Data Visualization with Pandas\df2'
+)
 plt.style.use('ggplot')
 
 

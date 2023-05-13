@@ -7,16 +7,20 @@ BASIC FUNCTIONS CONCEPTS:
 
 DECORATORS:
 -A decorator takes in a function as parameter, adds some functionality and returns that function.
--This is also called metaprogramming (a part of the program tries to modify another part at compile time).
+-This is also called metaprogramming (a part of the program tries to modify another part at
+compile time).
 -A decorated function will take then name of the decorator function
 -Decorators with arguments require parentheses, even if you pass empty arguments.
 -Built-in decorators:
-    -@property       -> transform function into a property attribute. Decorated function must not required parameteres.
-    -@staticmethod   -> transform a method into a static method so it does not receive an implicit first argument
+    -@property       -> transform function into a property attribute. Decorated function must not
+                        have required parameteres.
+    -@staticmethod   -> transform a method into a static method, so it does not receive an
+                        implicit first argument
     -@final          -> restrict the use of inheritance and overriding
     -@classmethod    -> make function behave like a class method
     -@abstractmethod -> transforma a method into an abstract one
-    -@memoized       -> caches a function's return value each time it is called and return that value if called later
+    -@memoized       -> caches a function's return value each time it is called and return that
+                        value if called later
 """
 
 import functools
@@ -72,7 +76,8 @@ def user_has_permission_modified(func):
 
 # -----------------DECORATORS WITH PARAMETERS-----------------
 
-# To allow a decorator to accept parameters, we need to wrap our decorator with another function that takes parameters
+# To allow a decorator to accept parameters, we need to wrap our decorator with another function
+# that takes parameters
 # Create our main function with the parameters to pass
 def user_has_permission(access_level):
     # Create the decorator
@@ -141,5 +146,6 @@ When `double_decorator()` runs, this chain of "functions" runs:
 
 That is because user_name_starts_with_j is the first decorator to be applied. 
 It replaces double_decorator by the function it returns.
-Then, user_has_permission is applied and replaces the function the other decorator returned by the function it returns.
+Then, user_has_permission is applied and replaces the function the other decorator returned by 
+the function it returns.
 """

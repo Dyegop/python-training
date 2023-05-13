@@ -1,7 +1,7 @@
 """
 REGULAR EXPRESSIONS:
 -Regular expressions are text-matching patterns described with a formal syntax.
--Regular expressions are often referred to as 'regex' or 'regexp'.
+-Regular expressions are often referred to as "regex" or "regexp".
 -Regular expressions support a huge variety of patterns
 """
 
@@ -48,7 +48,7 @@ re.split(split_term, text2)
 # group(n) -> return the string matched by the regular expression
 # group function internally set numbers to different parts of the regular expression
 # n -> optional parameter, return n part of the matched string
-match = re.compile(r'^(.*?)((0|1|2|3)?\d)-((0|1)?\d)-((19|20)\d\d)$')
+match = re.compile(r'^(.*?)([0123])?\d-([01])?\d-((19|20)\d\d)$')
 text4 = 'Current date: 23-09-2020'
 result = re.search(match, text4)
 print(result.group(1))  # Output: 'Current date: '
@@ -65,7 +65,7 @@ print(match2.start(), match2.end())
 print(match2.span())
 
 # re.VERBOSE    -> allow you to write regular expressions that look more readable
-# re.IGNORECASE -> perform case-insensitive matching, so it ignores uppercase and lowercase matching
+# re.IGNORECASE -> perform case-insensitive matching, ignoring uppercase and lowercase matching
 # You can visually separate logical sections of the pattern and add comments
 a = re.compile(r"""\d +  # the integral part
                    \.    # the decimal point
@@ -79,18 +79,20 @@ a = re.compile(r"""\d +  # the integral part
 # -----------------PATTERNS-----------------
 
 # Metacharacters with regular expressions:
-# [] -> specify character class, a set or range of characters to match. Metacharacters are not active inside []
+# [] -> specify character class, a set or range of characters to match. Metacharacters are not
+# active inside []
 # () -> group part of the regular expression together
 # .  -> any character except newline
 # ^  -> start of string. If inside [], exclude characters (for example, [^1-9])
 # $  -> end of string
-# \  -> escape all the metacharacters so you can still match them in patterns
+# \  -> escape all the metacharacters, so you can still match them in patterns
 # |  -> or operator to indicates several conditions
 # *  -> specify that the previous character can be matched zero or more times
 # +  -> specify that the previous character can be matched one or more times
 # ?  -> specify that the previous character can be matched zero or one time
 # {} -> specify a set or range of repetitions
-# syntax: {m, n}, where m is the minimum number of repetitions and n is the maximum. You can omit either m or n
+# syntax: {m, n}, where m is the minimum number of repetitions and n is the maximum. You can
+# omit either m or n
 
 # Special sequencies with \
 # \d -> match any decimal digit; equivalent to the class [0-9]
@@ -135,5 +137,7 @@ multi_re_find(test_patterns, test_phrase)
 # Example 4: Using () and [] to create subpatterns
 # Main pattern: [a-zA-Z0-9.]+(@[a-zA-Z.]+\.[a-zA-Z]{2,4})
 # Subpattern: (@[a-zA-Z.]+\.[a-zA-Z]{2,4})
-email_list = ['yamla@optonline.net', 'smallpaul@comcast.net', 'esokullu@yahoo.com', 'dkeeler@gmail.com']
+email_list = [
+    'yamla@optonline.net', 'smallpaul@comcast.net', 'esokullu@yahoo.com', 'dkeeler@gmail.com'
+]
 pattern = re.compile(r'([a-zA-Z0-9.]+(@[a-zA-Z.]+\.[a-zA-Z]{2,4}))')

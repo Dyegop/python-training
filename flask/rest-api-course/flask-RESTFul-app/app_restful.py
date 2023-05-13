@@ -8,8 +8,10 @@ API AUTHENTICATION WITH FLASK-JWT
 -How API Authentication works
     -The user writes its username and password on your website.
     -The username and password gets sent to the backend API.
-    -The API looks for any record on the User table that matches with both parameters (username and password).
-    -If a user is found, it generates a token for that user and responds status_code=200 back to the front end.
+    -The API looks for any record on the User table that matches with both parameters (username
+    and password).
+    -If a user is found, it generates a token for that user and responds status_code=200 back to
+    the front end.
     -The front-end will use that token from now on to make any future request.
 
 -Ways of create tokens:
@@ -17,9 +19,10 @@ API AUTHENTICATION WITH FLASK-JWT
     -Bearer Token	- Example: YWxlc2FuY2hlenI6NzE0YmZhNDNlN2MzMTJiZTk5OWQwYWZlYTg5MTQ4ZTc=
     -JWT Token	    - Example: eyJhbGciOiJIUzI1NiIsInR5c.eyJzdWIiOFt2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpM
 
--JSON Web Token or JWT is an open standard to create tokens and it is basically an obfuscation of data.
--JSON Web Token includes a structure, which can be decrypted by the server that allows you to  authenticate the
-identity of the user of that application.
+-JSON Web Token or JWT is an open standard to create tokens, and it is basically an obfuscation
+of data.
+-JSON Web Token includes a structure, which can be decrypted by the server that allows you to
+authenticate the identity of the user of that application.
 -Flask-JWT is an extension for Flask to manage JWT authenticaton.
 -For additional information, see https://content.breatheco.de/en/lesson/what-is-JWT-and-how-to-implement-with-Flask
 """
@@ -116,10 +119,8 @@ class Store(Resource):
         return new_store, 200
 
 
-
-
 class Items(Resource):
-    #@jwt_required()
+    # @jwt_required()
     def get(self, name):
         item = next(filter(lambda x: x['name'] == name, items), None)
         return {'item': item}, 200 if item else 404
@@ -137,8 +138,8 @@ class Items(Resource):
         parser = reqparse.RequestParser()
         # Add argument
         # When we run the request, this will look at the payloads and parse the arguments
-        # If we add arguments in the JSON payload (the json sent in the request) that are not parsed,
-        # they will be skipped
+        # If we add arguments in the JSON payload (the json sent in the request) that are not
+        # parsed, they will be skipped
         parser.add_argument(
             'price',
             type=float,
@@ -161,13 +162,9 @@ class Items(Resource):
         return {"message": "Item deleted"}
 
 
-
-
 class ItemList(Resource):
     def get(self):
         return {'items': items}, 200
-
-
 
 
 

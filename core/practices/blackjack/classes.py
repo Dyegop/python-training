@@ -11,8 +11,10 @@ Attribute’s value can be changed in three ways:
 -Setting the value through a method.
 -Incrementing the value (add a certain amount to it) through a method.
 
-Attributes can take parameters required when you create an object or can be defined to take a value.
-    self.attribute = parameter --> attribute is linked to a parameter with an attribute for the object.
+Attributes can take parameters required when you create an object or can be defined to take a
+value.
+    self.attribute = parameter --> attribute is linked to a parameter with an attribute for the
+    object.
     def __init__(self, name):
         self.name = name
     self.attribute = value --> we define a value for the attribute. For example:
@@ -59,7 +61,8 @@ class Table:
 
 class Player(Table):
     # Child class inherits construct and attributes from parent class
-    # We can create an construct for the child class (optional). In this case, we need to add super()
+    # We can create a construct for the child class (optional). In this case, we need to add
+    # super()
     def __init__(self, name, funds, hand, score=0, bet=0):
         # super() allows us to access attributes from the construct of the parents class
         # In a way, super() is an alias for the parent classes
@@ -78,7 +81,9 @@ class Player(Table):
             self.funds = int(input("Please, introduce your funds, sir: "))
 
         # If we want to select two different integers in one line, we can do as follows:
-        # self.funds, self.bet = [int(x) for x in input("Please, introduce your funds and bet, sir: ").split()]
+        # self.funds, self.bet = [
+        # int(x) for x in input("Please, introduce your funds and bet, sir: ").split()
+        # ]
 
     def ace_choice(self):
         for i in self.hand:
@@ -105,4 +110,3 @@ class Game:
             self.status = 1
         else:
             self.status = -1
-

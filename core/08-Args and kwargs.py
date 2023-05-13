@@ -4,7 +4,7 @@
 -Using args is just a convention, any name can be used instead.
 
 **kwargs:
--It allows you to pass multiple keyword arguments to a function by using the unpacking operator (**).
+-It allows you to pass multiple keyword args to a function by using the unpacking operator (**).
 -Instead of accepting positional arguments it accepts keyword (or named) arguments.
 -Using **kwargs is just a convention, any name can be used instead.
 """

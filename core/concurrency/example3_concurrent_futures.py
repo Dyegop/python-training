@@ -1,11 +1,10 @@
 """
-concurrent.futures module is a simpler interface that works very much the same regardless of whether you use multiple
-threads or multiple processes as the underlying parallelization gimmick.
+concurrent.futures module is a simpler interface that works very much the same regardless of
+whether you use multiple threads or multiple processes as the underlying parallelization gimmick.
 
 Executor objects: class concurrent.futures.Executor
-An abstract class that provides methods to execute calls asynchronously. It should not be used directly, but through
-its concrete subclasses.
-
+An abstract class that provides methods to execute calls asynchronously. It should not be used
+directly, but through its concrete subclasses.
 """
 
 import time

@@ -1,10 +1,10 @@
 """
 PICKLE
 -An alternativefor serializing and de-serializing a Python object structure.
--By "serialize" we mean convert it from a python object into a string (pickling) in a way that it can be turned back into
-an equivalent python object later (unpickling).
--Pickle has the strength that it can serialize nearly anything but one of the downsides of pickle is that someone
-could engineer a pickle file with malicious code in it.
+-By "serialize" we mean convert it from a python object into a string (pickling) in a way that it
+can be turned back into an equivalent python object later (unpickling).
+-Pickle has the strength that it can serialize nearly anything but one of the downsides of pickle
+is that someone could engineer a pickle file with malicious code in it.
 
 SHELVE
 -Shelve module provides an easier way to load and save from a pickle file
@@ -12,8 +12,6 @@ SHELVE
 
 import pickle
 import shelve
-
-
 
 
 # -----------------PICKLE-----------------
@@ -45,8 +43,6 @@ def load_data():
     for keys in load_db:
         print(keys, '=>', load_db[keys])
     load_file.close()
-
-
 
 
 

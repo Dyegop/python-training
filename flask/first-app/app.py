@@ -51,12 +51,13 @@ def hello_world():
 @app.route('/post/<int:post_id>')
 def post(post_id):
     """
-    Return a rendered template to a post
+    Return a rendered template to a post.
 
-    <int:post_id> is flask syntax to indicate that the value here is the value of the integer parameter post_id
+    <int:post_id> is flask syntax to indicate that the value here is the value of the integer
+    parameter post_id.
 
     render_template('template_name', *args) -> render a template from templates into the browser
-        -We can pass named arguments that will become variables in the html file
+        -We can pass named arguments that will become variables in the html file.
     """
     # Assign values from our dictionary based on post_id
     v_post = POSTS.get(post_id)
@@ -73,15 +74,17 @@ def create():
     """
     This method return two different urls:
         -If the user loads our website, return rendered template 'create.jinja2' to create a form
-        -If the user submits a form, save data to our database and redirect the browser to 'post' function
-        to display that data
+        -If the user submits a form, save data to our database and redirect the browser to 'post'
+        function to display that data.
 
     methods=[...] is a parameter that indicates what kind of requests can accept our function
 
     Browsers always sends 'GET' to load the page and 'POST' once a user press submit in a form
-        -To hide information when sending data to an HTML form, we use 'request.form' instead of 'request.args'
+        -To hide information when sending data to an HTML form, we use 'request.form' instead of
+        'request.args'.
 
-    redirect(url)              -> return a response object that, if called, redirects the client to the target location
+    redirect(url) -> return a response object that, if called, redirects the client
+    to the target location
     url_for('function', *args) -> return the route associated with the indicated function
         -We can pass named arguments that will become variables in the html file
     """
@@ -95,17 +98,12 @@ def create():
         POSTS[post_id] = {'id': post_id, 'title': title, 'content': content}
         # Redirect browser to 'post' function
         return redirect(url_for('post', post_id=post_id))
-    # If the method is 'GET', we have just loaded the '/post/create' url so we can render the form.
+    # If the method is 'GET', we have just loaded the '/post/create' url, so we can render the
+    # form.
     return render_template('create.jinja2')
 
 
 
-
-
-
-
-
-# --------- Run flask app ---------
 
 if __name__ == '__main__':
     print(POSTS.items())
