@@ -39,7 +39,9 @@ poetry install		         			-> check for dependencies, resolves and install them
 poetry update							-> update all dependencies
 poetry update <dependency_name>			-> update a given dependecy or dependecies (e.g, poetry
                                         update requests beautifulsoup4).
-poetry export --output requirements.txt -> export poetry dependecies to a requirements file.	
+poetry export --output requirements.txt -> export poetry dependecies to a requirements file.
+poetry env use "path/to/python.exe"     -> use env for the python version in the given path
+                                        -> the path must be added with quotation marks
 
 
 

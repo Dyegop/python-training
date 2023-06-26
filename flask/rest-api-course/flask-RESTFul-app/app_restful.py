@@ -45,9 +45,12 @@ app.secret_key = 'diego03'
 api = Api(app)
 
 # Create authenticate object
-# JWT creates a new endpoint `/auth`, then it gets a username and a password and send it to the authentication_handler
+# JWT creates a new endpoint `/auth`, then it gets a username and a password and send it to the
+# authentication_handler
 # The `/auth` endpoint returns a token that it sends to the identity function
-jwt = JWT(app=app, authentication_handler=security.authenticate, identity_handler=security.identity)
+jwt = JWT(
+    app=app, authentication_handler=security.authenticate, identity_handler=security.identity
+)
 
 
 # Data
