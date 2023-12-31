@@ -27,21 +27,25 @@ build-backend = "poetry.core.masonry.api"
 
 ------ COMMANDS ------
 
-poetry new <folder_name>  	 			-> create new project.
-poetry add <package_name> 	 			-> add an external package to your project.
-poetry add <package_name> -D/--dev 		-> add an external package specifying that it is a dev
+poetry self update <version>            - Upgrades Poetry to the last version. If <version> is
+                                        given, it upgrades/downgrades Poetry to that version.
+poetry new <folder_name>  	 			- Create new project.
+poetry add <package_name> 	 			- Add an external package to your project.
+poetry add <package_name> -D/--dev 		- Add an external package specifying that it is a dev
                                         dependency.
-poetry add `cat requirements.txt`		-> add dependecies to a project from requirements txt file
-poetry --version		  	 			-> print installed version of poetry.
-poetry env list			     			-> list installed envs in the current directory.
-poetry install		         			-> check for dependencies, resolves and install them. A
+poetry add `cat requirements.txt`		- Add dependecies to a project from requirements txt file.
+poetry --version		  	 			- Print installed version of poetry.
+poetry env list			     			- List installed envs in the current directory.
+poetry install		         			- Check for dependencies, resolves and install them. A
                                         pyproject.toml is required.
-poetry update							-> update all dependencies
-poetry update <dependency_name>			-> update a given dependecy or dependecies (e.g, poetry
-                                        update requests beautifulsoup4).
-poetry export --output requirements.txt -> export poetry dependecies to a requirements file.
-poetry env use "path/to/python.exe"     -> use env for the python version in the given path
-                                        -> the path must be added with quotation marks
+poetry lock                             - Reads the pyproject.toml file from the current
+                                        directory, processes it, and locks the dependencies in
+                                        the poetry.lock file.
+poetry update							-> Update all dependencies
+poetry update <dependency_name>			-> Update a given dependecy or dependecies.
+poetry export --output requirements.txt -> Export poetry dependecies to a requirements file.
+poetry env use "path/to/python.exe"     -> Use env for the python version in the given path the
+                                        path must be added with quotation marks.
 
 
 
