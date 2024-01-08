@@ -1,11 +1,8 @@
 import sqlite3
 import pandas as pd
 import os
-import openpyxl
 
 
-
-# Database connection
 class SQLiteConnection:
     def __init__(self, database):
         self.database = database
@@ -53,10 +50,7 @@ class SQLiteConnection:
         df = self.getDataframe(query)
         filename = os.path.basename(path)
         try:
-            wb = openpyxl.Workbook()
-            wb.save(filename=path)
             df.to_excel(path, sheet_name='Results', index=False)
-            wb.close()
         except FileExistsError as e:
             print(f"Error found creating file {filename}")
             print(e)

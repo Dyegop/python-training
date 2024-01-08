@@ -1,7 +1,6 @@
 import pygame
 
 
-
 class Ship:
     """ Class for ship elements
 

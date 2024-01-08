@@ -14,7 +14,7 @@ def increment_manager():
     global counter
     while True:
         # Get element in counter_queue
-        # This waits until an item is available and locks the queue, so no other threads can execute
+        # Waits until an item is available and locks the queue
         increment = counter_queue.get()
         time.sleep(random.random())
         # Increment counter

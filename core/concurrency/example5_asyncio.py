@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# asyncq.py
 
 import asyncio
 import itertools as it

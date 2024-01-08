@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# rand.py
 
 import asyncio
 import random
