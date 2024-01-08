@@ -7,8 +7,9 @@ IF-ELSE:
             statement 2
 
 NESTED IF-ELSE:
-    -Nested if-else works the same as 'if' statements, where if the "if" block condition is false,
-    then it checks to elif blocks. If all blocks are false, then it executes an else statement.
+    -Nested if-else works the same as 'if' statements, where whenever the 'if' block condition is
+    false, then it checks to elif blocks. If all blocks are false, then it executes an else
+    statement.
         if <condition1>:
             statement 1
         elif <condition2>:
