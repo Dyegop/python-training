@@ -32,8 +32,8 @@ __ADD__, __SUB__
 -Magic methods for the "+" and "-" operators.
 
 __GETITEM, __SETITEM__, __DELITEM__
--__getitem__ is called to implement evaluation of self[key], i.e var = data_obj[2]
--__setitem__ is called to implement assignment to self[key], i.e data_obj[2] = 4
+-__getitem__ is called to implement evaluation of self[key], i.e. var = data_obj[2]
+-__setitem__ is called to implement assignment to self[key], i.e. data_obj[2] = 4
 -__delitem__ is called to implement deletion of self[key]
 -This methods should only be implemented for mappings if the objects support changes to the
 values for keys, or if new keys can be added, or for sequences if elements can be replaced.
@@ -223,7 +223,7 @@ print("after __name__ guard")
 # 7- It prints the string "before __name__ guard".
 # 8- if your module is the main program -> it will see that __name__ was indeed set to "__main__"
 # and it calls and executes the two functions
-# 8- if your module is imported by another program -> __name__ will be renamed to the the imported
+# 8- if your module is imported by another program -> __name__ will be renamed to the imported
 # module, and it'll skip the body of the if statement
 # 9- It will print the string "after __name__ guard" in both situations.
 

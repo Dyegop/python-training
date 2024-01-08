@@ -24,7 +24,8 @@ of data.
 -JSON Web Token includes a structure, which can be decrypted by the server that allows you to
 authenticate the identity of the user of that application.
 -Flask-JWT is an extension for Flask to manage JWT authenticaton.
--For additional information, see https://content.breatheco.de/en/lesson/what-is-JWT-and-how-to-implement-with-Flask
+-For additional information, see
+https://content.breatheco.de/en/lesson/what-is-JWT-and-how-to-implement-with-Flask
 """
 
 from flask import Flask, request

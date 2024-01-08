@@ -1,7 +1,7 @@
 """
 REGULAR EXPRESSIONS:
 -Regular expressions are text-matching patterns described with a formal syntax.
--Regular expressions are often referred to as "regex" or "regexp".
+-Regular expressions are often referred to as `regex`.
 -Regular expressions support a huge variety of patterns
 """
 
