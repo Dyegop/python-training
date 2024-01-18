@@ -5,9 +5,7 @@ FLASK NOTES:
     -Every function will be decorated to add the route that will call that function
 """
 
-# Imports
 from flask import Flask, render_template, request, redirect, url_for
-
 
 
 # Create flask first-app (an instance of flask)
@@ -101,8 +99,6 @@ def create():
     # If the method is 'GET', we have just loaded the '/post/create' url, so we can render the
     # form.
     return render_template('create.jinja2')
-
-
 
 
 if __name__ == '__main__':

@@ -1,8 +1,6 @@
 from hmac import compare_digest
 from user import User
 
-
-
 # Define users
 users = [
     User(1, 'bob', 'asdfg'),
@@ -12,7 +10,6 @@ users = [
 # Map users and user ids
 username_mapping = {u.username: u for u in users}
 userid_mapping = {u.id: u for u in users}
-
 
 
 def authenticate(username, password):

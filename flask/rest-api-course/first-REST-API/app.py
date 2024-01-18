@@ -120,8 +120,5 @@ def create_item_in_store(name):
     return jsonify({'message': 'store not found'})
 
 
-
-
-
 # A port is an area in the computer where the app will recieve requests and return responses
 app.run(port=5000, debug=True)

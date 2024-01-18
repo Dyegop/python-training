@@ -2,7 +2,6 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 
 
-
 # Create our Flask application
 app = Flask(__name__)
 
@@ -11,7 +10,6 @@ api = Api(app)
 
 # Data
 stores = ['My Evil Store']
-
 
 
 class Store(Resource):
@@ -32,17 +30,13 @@ class Store(Resource):
         return new_store, 200
 
 
-
 class StoreList(Resource):
     def get(self):
         return stores, 200
 
 
-
-
 api.add_resource(Store, '/store/<string:name>')
 api.add_resource(StoreList, '/stores')
-
 
 
 app.run(port=5000, debug=True)
