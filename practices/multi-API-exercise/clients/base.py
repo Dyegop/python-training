@@ -1,10 +1,11 @@
-import requests
 from datetime import timedelta
 
+import requests
 
 
 class RequestsManager:
     """Manage requests"""
+
     def __init__(self, url_base: str, url_suffix: str):
         self.url_base = url_base
         self.url_suffix = url_suffix
@@ -13,14 +14,6 @@ class RequestsManager:
     def __str__(self):
         return self.end_point
 
-    def get(self):
-        try:
-            re = requests.get(self.end_point)
-            re.raise_for_status()
-            return re
-        except requests.exceptions.RequestException as e:
-            raise SystemExit(e)
-
     @property
     def text(self):
         return self.get().text
@@ -28,6 +21,14 @@ class RequestsManager:
     @property
     def json(self):
         return self.get().json()
+
+    def get(self):
+        try:
+            re = requests.get(self.end_point)
+            re.raise_for_status()
+            return re
+        except requests.exceptions.RequestException as e:
+            raise SystemExit(e)
 
     @staticmethod
     def daterange(start_date, end_date):

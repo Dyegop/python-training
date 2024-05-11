@@ -7,4 +7,3 @@ actions.
 -Test runner: a component which orchestrates the execution of tests and provides the outcome to
 the user.
 """
-
