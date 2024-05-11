@@ -6,7 +6,7 @@ authors = ["dyegop <poncelas.professional@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 requests = "^2.31.0"
 pandas = "^2.2.2"
 pillow = "^10.3.0"
@@ -17,7 +17,6 @@ flask-restful = "^0.3.10"
 flask-jwt = "^0.3.2"
 openai = "^1.27.0"
 python-dotenv = "^1.0.1"
-
 
 [build-system]
 requires = ["poetry-core"]
