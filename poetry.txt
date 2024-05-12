@@ -1,26 +1,34 @@
 """
 ------ BASICS ------
 
-Poetry is a dependency manager.
-Poetry has a configuration file called pyproject.toml, in the following format:
-
-# pyproject.toml
+Poetry is a dependency manager for Python.
+The pyproject.toml file is what is the most important in a project with Poetry.
+This file will orchestrate your project and its dependencies and has the following format:
 
 [tool.poetry]
-name = "rp-poetry"
-version = "0.1.0"
-description = ""
-authors = ["Philipp <philipp@realpython.com>"]
+name = "name of the project"
+version = "semver project version"
+description = "description of the project"
+authors = ["AuthorName <author@emailaddress>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
+dependency = "version"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+
+
+------ PYPROJECT CONFIGURATIONS ------
+
+Poetry can operate in two different modes by setting `package-mode` to false or true.
+See https://python-poetry.org/docs/basic-usage/#operating-modes
+
+Poetry provides a way to organize dependencies by groups. To declare a new dependency group, use
+a tool.poetry.group.<group> section where <group> is the name of your dependency group.
+See https://python-poetry.org/docs/managing-dependencies/
 
 
 
@@ -39,6 +47,9 @@ Add an external package to your project.
 
 poetry add <package_name> -D/--dev
 Add an external package specifying that it is a dev dependency.
+
+poetry add --group <group_name> <package_name>
+Add an external package to your project and the given group name.
 
 poetry add `cat requirements.txt`
 Add dependecies to a project from requirements txt file.
