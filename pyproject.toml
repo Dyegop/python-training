@@ -1,13 +1,13 @@
 [tool.poetry]
 package-mode = false
-name = "python-documentation"
+name = "documentation-python"
 description = "Documentation and exercises of the Python programming language and some its libraries and frameworks."
 authors = ["dyegop <poncelas.professional@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.13"
-requests = "^2.31.0"
+requests = "^2.32.0"
 pandas = "^2.2.2"
 pillow = "^10.3.0"
 openpyxl = "^3.1.2"
@@ -25,5 +25,5 @@ pre-commit = "^3.7.1"
 pylint = "^3.1.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = "poetry-core"
 build-backend = "poetry.core.masonry.api"
