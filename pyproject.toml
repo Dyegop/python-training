@@ -1,7 +1,7 @@
 [tool.poetry]
 package-mode = false
-name = "documentation-python"
-description = "Documentation and exercises of the Python programming language and some its libraries and frameworks."
+name = "python-training"
+description = "Python learning of core libraries and some frameworks or external dependencies."
 authors = ["dyegop <poncelas.professional@gmail.com>"]
 readme = "README.md"
 
